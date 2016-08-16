@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Malware-Traffic-Analysis.net - Blog Entries</title>
+    <link>http://www.malware-traffic-analysis.net/index.html</link>
+    <description>A malware traffic analysis blog</description>
+    <item>
+      <title>2016-08-15 - Zepto variant Locky malspam</title>
+      <link>http://www.malware-traffic-analysis.net/2016/08/15/index.html</link>
+    </item>
+    <item>
+      <title>2016-08-13 - Boleto malspam</title>
+      <link>http://www.malware-traffic-analysis.net/2016/08/13/index.html</link>
+    </item>
+    <item>
+      <title>2016-08-12 - pseudoDarkleech Neutrino EK from 74.208.99.201 sends CrypMIC ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/08/12/index.html</link>
+    </item>
+    <item>
+      <title>2016-08-11 - EITest Neutrino EK from 107.6.177.2 sends CrypMIC ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/08/11/index.html</link>
+    </item>
+    <item>
+      <title>2016-08-10 - Magnitude EK from 185.30.232.85 sends Cerber ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/08/10/index.html</link>
+    </item>
+    <item>
+      <title>2016-08-08 - Locky malspam - Subject: Copy: IMG(6559)</title>
+      <link>http://www.malware-traffic-analysis.net/2016/08/08/index.html</link>
+    </item>
+    <item>
+      <title>2016-08-05 - EITest Neutrino EK sends CrypMIC ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/08/05/index2.html</link>
+    </item>
+    <item>
+      <title>2016-08-05 - Magnitude EK from 185.30.232.65 sends Cerber ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/08/05/index.html</link>
+    </item>
+    <item>
+      <title>2016-08-01 - pseudoDarkleech Neutrino EK from 64.150.187.10 sends CrypMIC ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/08/01/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-29 - EK data dump (Magnitude EK, EITest Neutrino EK)</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/29/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-29 - EITest Neutrino EK sends CrypMIC ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/29/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-28 - PseudoDarkleech Neutrino EK sends CrypMIC ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/28/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-27 - Afraidgate Neutrino EK from 185.140.33.99 sends Locky ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/27/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-26 - Malspam hunt</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/26/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-26 - pseudoDarkleech Neutrino EK from sends CrypMIC ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/26/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-25 - Boleto malspam - Subject: Boleto de Cobranca - FIX - URGENTE</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/25/index4.html</link>
+    </item>
+    <item>
+      <title>2016-07-25 - Magnitude EK from 51.254.181.39 sends Cerber ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/25/index3.html</link>
+    </item>
+    <item>
+      <title>2016-07-25 - EITest Neutrino EK from 137.74.156.191 sends CryptXXX ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/25/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-25 - pseudoDarkleech Neutrino EK from sends CryptXXX ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/25/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-22 - pseudoDarkleech Neutrino EK from 188.138.70.188 sends CryptXXX ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/22/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-22 - Afraidgate Neutrino EK from 185.140.33.76 sends Locky ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/22/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-21 - Locky malspam - Subject: Financial statement</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/21/index4.html</link>
+    </item>
+    <item>
+      <title>2016-07-21 - EITest Neutrino EK from 185.106.120.219 sends Bandarchor ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/21/index3.html</link>
+    </item>
+    <item>
+      <title>2016-07-21 - Neutrino EK sends Bandarchor ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/21/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-21 - PseudoDarkleech Neutrino EK sends CryptXXX ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/21/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-20 - PseudoDarkleech Neutrino EK sends CryptXXX ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/20/index3.html</link>
+    </item>
+    <item>
+      <title>2016-07-20 - Neutrino EK from 131.72.139.201 sends Bandarchor ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/20/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-20 - EITest Neutrino EK from 131.72.139.201</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/20/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-19 - EITest Neutrino EK from 74.208.185.198 sends CryptXXX ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/19/index3.html</link>
+    </item>
+    <item>
+      <title>2016-07-19 - Afraidgate Neutrino EK from 5.2.72.114 sends Locky ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/19/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-19 - Guest blog: Thomas Hegel - Neutrino EK - EITest Campaign</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/19/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-18 - Neutrino EK from 185.141.25.59 sends Bandarchor ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/18/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-18 - pseudoDarkleech Neutrino EK from 85.93.93.163 sends CryptXXX ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/18/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-15 - Neutrino EK from 5.2.72.237 sends Gootkit</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/15/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-15 - pseudoDarkleech Neutrino EK from 74.208.75.94 sends CryptXXX ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/15/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-14 - Afraidgate Neutrino EK from 5.2.72.236 sends Locky ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/14/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-14 - Neutrino EK from 185.141.25.57 sends Bandarchor ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/14/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-13 - Neutrino EK data dump with &quot;juicylemon&quot; Bandarchor</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/13/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-12 - Locky malspam - Subject: Fw:</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/12/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-11 - EK data dump (Magnitude EK, Neutrino EK)</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/11/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-08 - EK data dump - Neutrino EK sends CryptXXX and Gootkit, Rig EK sends CrypotBit</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/08/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-07 - Neutrino EK sends CrypMIC (EITest and pseudo-Darkleech campaigns)</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/07/index3.html</link>
+    </item>
+    <item>
+      <title>2016-07-07 - Pizzacrypts... Really?</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/07/index2.html</link>
+    </item>
+    <item>
+      <title>2016-07-07 - Traffic analysis exercise - Email Roulette</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/07/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-06 - Pcap and malware for an ISC diary</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/06/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-05 - Magnitude EK from 62.138.5.199 sends Cerber ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/05/index.html</link>
+    </item>
+    <item>
+      <title>2016-07-01 - Neutrino EK and &quot;realstatistics&quot; gate change</title>
+      <link>http://www.malware-traffic-analysis.net/2016/07/01/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-30 - Neutrino EK data dump</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/30/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-29 - EK data dump (more Neutrino EK, Rig EK)</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/29/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-28 - EK data dump (Neutrino EK, Rig EK)</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/28/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-27 - Monday malspam hunt - Locky</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/27/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-26 - Rig EK from 46.30.42.236 sends Cerber ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/26/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-25 - malspam - Subj: Boleto Condominio em Aberto</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/25/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-24 - pseudo-Darkleech Neutrino EK sends CryptXXX ransomware</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/24/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-23 - Neutrino EK from 108.163.224.94 sends CryptXXX</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/23/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-21 - Data dump - Neutrino EK sends CryptXXX</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/21/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-20 - EK data dump (Neutrino EK, Rig EK, Sundown EK)</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/20/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-17 - pseudo-Darkleech Neutrino EK from 45.63.25.106</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/17/index.html</link>
+    </item>
+    <item>
+      <title>2016-06-15 - Sundown EK from 45.63.26.202 sends Flash and Silverlight exploits</title>
+      <link>http://www.malware-traffic-analysis.net/2016/06/15/index.html</link>
+    </item>
+  </channel>
+</rss>
