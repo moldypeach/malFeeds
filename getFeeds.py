@@ -44,15 +44,10 @@ class GetFeeds:
 			sys.exit()
 		else:
 			for item in self.feeds:
-				#print("Item ln 46: " + "\"" + item + "\"")
 				self.outfile = self._buildOutFile(item)
-				#print("outfile ln 47: " + "\"" + self.outfile + "\"")
 				self.outDir = self._buildOutDir(item)
-				#print("outDir ln 49: " + "\"" + self.outDir + "\"")
 				self.feedDstDir = self.feedDstRootDir + self.outDir
-				#print("feedDstDir ln 52: " + "\"" + self.feedDstDir + "\"")
 				self.outURL = self._buildOutURL()
-				#print("outURL ln 54: " + "\"" + self.outURL + "\"")
 				self.downloadFeed(item.strip(' \r\n\t'))
 	#Return the current feed URL
 	def getFeedURL(self):
@@ -65,10 +60,7 @@ class GetFeeds:
 			print("ERROR: invalid URL sntax:\n\t" + url)
 	#Download feed and write it to a file previously defined
 	def downloadFeed(self, feedURL):
-		#print("feedURL ln 67: " + "\"" + feedURL + "\"")
-		#print("variable feedURL type: " + type(feedURL).__name__)
 		#Create feed download directory if it doesn't already exist
-		#os.makedirs(self.feedDstRootDir, exist_ok=True)
 		os.makedirs(self.feedDstDir, exist_ok=True)
 
 		# http://stackoverflow.com/questions/27387783/how-to-download-a-file-with-urllib3
