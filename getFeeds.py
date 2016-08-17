@@ -19,7 +19,6 @@ class GetFeeds:
 	def __init__(self):
 		self.feeds = []
 		self.getFeeds()
-		#self.feedURL = self.setFeedURL(feedURL)
 		self.outfile = ""
 		self.outDir = ""
 		self.outURL = ""
@@ -49,9 +48,6 @@ class GetFeeds:
 				self.feedDstDir = self.feedDstRootDir + self.outDir
 				self.outURL = self._buildOutURL()
 				self.downloadFeed(item.strip(' \r\n\t'))
-	#Return the current feed URL
-	def getFeedURL(self):
-		return self.feedURL
 	#Validates http(s):// URL is valid
 	def validateFeedURL(self, url):
 		if validators.url(url):
@@ -68,6 +64,7 @@ class GetFeeds:
 		http = urllib3.PoolManager(headers=user_agent)
 		
 		with http.request('GET', feedURL, preload_content=False) as r, open(self.outURL, 'wb') as rssFile:
+			#Copy request obj 'r' to file obj 'rssFile'
 			shutil.copyfileobj(r, rssFile) #https://docs.python.org/3.4/library/shutil.html
 	#Returns last item of split URL list as the filename, e.g. file.rss
 	def _buildOutFile(self, feedURL):
@@ -87,3 +84,5 @@ class GetFeeds:
 	def genStrMD5(self,inStr):
 		return hashlib.md5(inStr.encode("utf-8")).hexdigest()
 
+	def genBytesMD5(self, bObj):
+		return hashlib.md5(bObj).hexdigest()
