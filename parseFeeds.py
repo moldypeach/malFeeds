@@ -1,5 +1,6 @@
 import feedparser
-import hashlib
+import os
+from getFeeds import GetFeeds
 
 class parseFeeds:
 	""" Parse downloaded feeds and look for updates"""
