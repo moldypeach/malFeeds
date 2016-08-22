@@ -14,12 +14,12 @@ class GetFeeds:
 	feedSrcDir = feedBaseDir + "sources/"
 	feedDstRootDir = feedBaseDir + "downloads/"
 	feedDstDir = ""
+	outfile = "feed"
 
 	# Instance variables unique to each instance
 	def __init__(self):
 		self.feeds = []
 		self.getFeeds()
-		self.outfile = ""
 		self.outDir = ""
 		self.outURL = ""
 
@@ -43,7 +43,6 @@ class GetFeeds:
 			sys.exit()
 		else:
 			for item in self.feeds:
-				self.outfile = self._buildOutFile(item)
 				self.outDir = self._buildOutDir(item)
 				self.feedDstDir = self.feedDstRootDir + self.outDir
 				self.outURL = self._buildOutURL()
@@ -66,9 +65,6 @@ class GetFeeds:
 		with http.request('GET', feedURL, preload_content=False) as r, open(self.outURL, 'wb') as rssFile:
 			#Copy request obj 'r' to file obj 'rssFile'
 			shutil.copyfileobj(r, rssFile) #https://docs.python.org/3.4/library/shutil.html
-	#Returns last item of split URL list as the filename, e.g. file.rss
-	def _buildOutFile(self, feedURL):
-		return feedURL.split('/').pop(-1).strip(' \n\r\t')
 	#Returns the second item of split, after protocol, as directory name
 	def _buildOutDir(self, feedURL):
 		tmp = feedURL.split('.').pop(1).strip(' \n\r\t')
