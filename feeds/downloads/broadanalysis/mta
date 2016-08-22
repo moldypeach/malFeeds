@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>BroadAnalysis</title>
+	<atom:link href="http://www.broadanalysis.com/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.broadanalysis.com</link>
+	<description>Information Security and Malware Research</description>
+	<lastBuildDate>Thu, 18 Aug 2016 12:05:02 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6</generator>
+	<item>
+		<title>Rig Exploit Kit via EITEST 85.93.0.13 delivers GootKit Banking Malware</title>
+		<link>http://www.broadanalysis.com/2016/08/18/rig-exploit-kit-via-eitest-85-93-0-13-delivers-gootkit-banking-malware/</link>
+		<pubDate>Thu, 18 Aug 2016 12:05:02 +0000</pubDate>
+		<dc:creator><![CDATA[Analysis]]></dc:creator>
+				<category><![CDATA[EITEST]]></category>
+		<category><![CDATA[Pcap File]]></category>
+		<category><![CDATA[Rig Exploit Kit]]></category>
+		<category><![CDATA[Albany NY]]></category>
+		<category><![CDATA[Banking Malware]]></category>
+		<category><![CDATA[GootKit]]></category>
+		<category><![CDATA[Malware Research]]></category>
+
+		<guid isPermaLink="false">http://www.broadanalysis.com/?p=1833</guid>
+		<description><![CDATA[NOTES: Today I captured traffic from the Rig Exploit Kit (EK) which delivered GootKit banking malware via the EITEST campaign. EITEST campaign continues to use the Rig EK since switching from the Neutrino EK on August 15th 2016. EITEST campaign has again changed its gate]]></description>
+				<content:encoded><![CDATA[<p><span id="more-1833"></span></p>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>Today I captured traffic from the Rig Exploit Kit (EK) which delivered GootKit banking malware via the EITEST campaign.</li>
+<li>EITEST campaign continues to use the Rig EK since switching from the Neutrino EK on <a href="http://www.broadanalysis.com/2016/08/15/rig-exploit-kit-via-eitest-delivers-gootkit-banking-malware/" target="_blank">August 15th 2016</a>.</li>
+<li>EITEST campaign has again changed its gate to IP address 85.93.0.13</li>
+</ul>
+<p>I have added a zipped pcap file for your analysis. The password is the usual used by malware researchers. If you do not know it please email me.<br />
+info@broadanalysis.com</p>
+<p><strong>PCAP file of the infection traffic:<br />
+</strong><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-18-Rig-EK-pcap.zip" target="_blank">2016-08-18-Rig-EK-pcap.zip</a></p>
+<p>&nbsp;</p>
+<p><strong>ASSOCIATED DOMAINS AND IP ADDRESSES</strong>:</p>
+<ul>
+<li>85.93.0.13 &#8211; yfaduheh.xyz – <strong>EITEST GATE</strong></li>
+<li>109.234.34.32 &#8211; end.lekai.com – <strong>RIG EK LANDING PAGE</strong></li>
+<li>115.28.36.224 &#8211; www.doswf.com &#8211; <strong>FLASH ENCRYPTION</strong></li>
+<li>200.54.180.101 &#8211; trumfteenlid.com – <strong>POST INFECTION TRAFFIC</strong></li>
+<li>200.54.180.101 &#8211; bookingffiisee.com – <strong>POST INFECTION TRAFFIC</strong></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>IMAGES AND DETAILS OF INFECTION CHAIN:</strong></p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh1.jpg"><img class="alignnone size-full wp-image-1834" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh1.jpg" alt="" width="1280" height="216" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh1.jpg 1280w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh1-300x51.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh1-768x130.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh1-1024x173.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh1-600x101.jpg 600w" sizes="(max-width: 1280px) 100vw, 1280px" /></a><strong>Shown above:</strong> Network traffic  associated with the Rig exploit and GootKit infection</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-18-index.jpg"><img class="alignnone size-full wp-image-1835" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-18-index.jpg" alt="" width="946" height="526" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-18-index.jpg 946w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-18-index-300x167.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-18-index-768x427.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-18-index-600x334.jpg 600w" sizes="(max-width: 946px) 100vw, 946px" /></a><strong>Shown above:</strong> Injected script found on index page of compromised site which redirects visitor to the EITEST gate to start infection chain – Web page source code can be found by right clicking on web page and selecting “View source”</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh2.jpg"><img class="alignnone size-full wp-image-1836" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh2.jpg" alt="" width="1279" height="138" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh2.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh2-300x32.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh2-768x83.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh2-1024x110.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yfaduheh2-600x65.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above: </strong>DNS post infection traffic associated with the GootKit</p>
+<p>&nbsp;</p>
+<p><strong>MALICIOUS PAYLOAD ASSOCIATED WITH</strong> <strong>THE RIG EXPLOIT:</strong></p>
+<ul>
+<li>2016-08-18-Rig-EK.swf<br />
+<a href="https://www.virustotal.com/en/file/58d175b75045a9b437c2d85c6d1f1408c6e1b80330ed4708ef70a585e5104535/analysis/" target="_blank">Virus Total Link</a></li>
+<li>2016-08-18-3959.tmp<br />
+<a href="https://www.virustotal.com/en/file/8531dcd08141ed06b273ef02287a0bdee9018e2fc26a74b1d9011ef48230c52c/analysis/" target="_blank">Virus Total Link</a><br />
+C:\Users\%UserName%\AppData\Local\Temp\</li>
+<li>2016-08-18-hkzrqjylq.dll<br />
+<a href="https://www.virustotal.com/en/file/4d71a084ec234e2d6936c1c8176b97b0545bfcad49c506435b56186e10852cdd/analysis/" target="_blank">Virus Total Link</a><br />
+C:\Windows\SysWOW64\</li>
+</ul>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Neutrino Exploit Kit via pseudoDarkleech HOPTO.ORG gate delivers CrypMic Ransomware</title>
+		<link>http://www.broadanalysis.com/2016/08/16/neutrino-exploit-kit-via-pseudodarkleech-hopto-org-gate-delivers-crypmic-ransomware-2/</link>
+		<pubDate>Tue, 16 Aug 2016 22:10:25 +0000</pubDate>
+		<dc:creator><![CDATA[Analysis]]></dc:creator>
+				<category><![CDATA[Neutrino Exploit Kit]]></category>
+		<category><![CDATA[Pcap File]]></category>
+		<category><![CDATA[pseudoDarkleech]]></category>
+		<category><![CDATA[Ransomware]]></category>
+		<category><![CDATA[CrypMic]]></category>
+		<category><![CDATA[Malware Research]]></category>
+
+		<guid isPermaLink="false">http://www.broadanalysis.com/?p=1822</guid>
+		<description><![CDATA[NOTES: Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign. The pseudoDarkleech campaign used the “hopto.org” gate to redirect to the Neutrino Exploit Kit (EK) landing page. CrypMic is using a new Command and Control]]></description>
+				<content:encoded><![CDATA[<p><span id="more-1822"></span></p>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign.</li>
+<li>The pseudoDarkleech campaign used the “hopto.org” gate to redirect to the Neutrino Exploit Kit (EK) landing page.</li>
+<li>CrypMic is using a new Command and Control server and continues to send its ransom notes over SSL port 443 in clear text.</li>
+<li>During capture the pcap file became segmented. I extracted Neutrino&#8217;s flash exploit using <a href="http://www.netresec.com/?page=NetworkMiner" target="_blank">NetworkMiner</a>. I included the flash file in the below zip file.</li>
+</ul>
+<p>I have added a zipped pcap file for your analysis. The password is the usual used by malware researchers. If you do not know it please email me.<br />
+info@broadanalysis.com</p>
+<p><strong>PCAP file of the infection traffic:<br />
+</strong><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-Neutrino-EK-pcap.zip" target="_blank">2016-08-16-Neutrino-EK-pcap.zip</a><strong><br />
+</strong></p>
+<p>&nbsp;</p>
+<p><strong>ASSOCIATED DOMAINS AND IP ADDRESSES</strong>:</p>
+<ul>
+<li>83.217.27.178 &#8211; vtqckhl.hopto.org GET /wordpress/?ARX8 – <strong>Redirect GATE</strong></li>
+<li>74.208.103.8 &#8211; cixiidae.recipmedia.co.uk – <strong>Netrino EK</strong> <strong>LANDING PAGE</strong></li>
+<li>85.14.243.9 – Port 443 Clear text<strong> – C2 Check-In – POST INFECTION TRAFFIC</strong></li>
+</ul>
+<p><strong>ASSOCIATED DOMAINS FOR RANSOM PAYMENT:</strong></p>
+<p>http://ccjlwb22w6c22p2k.onion.to<br />
+http://ccjlwb22w6c22p2k.onion.city</p>
+<p>&nbsp;</p>
+<p><strong>IMAGES AND DETAILS OF INFECTION CHAIN</strong>:</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl1.jpg"><img class="alignnone size-full wp-image-1823" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl1.jpg" alt="" width="1279" height="228" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl1.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl1-300x53.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl1-768x137.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl1-1024x183.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl1-600x107.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above:</strong> Traffic  associated with the Neutrino exploit and CrypMic ransomware infection.</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-index.jpg"><img class="alignnone size-full wp-image-1824" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-index.jpg" alt="" width="1006" height="526" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-index.jpg 1006w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-index-300x157.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-index-768x402.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-index-600x314.jpg 600w" sizes="(max-width: 1006px) 100vw, 1006px" /></a><strong>Shown above:</strong> Injected script found on compromised site redirecting to “hopto.org” gate</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl3.jpg"><img class="alignnone size-full wp-image-1826" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl3.jpg" alt="" width="766" height="588" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl3.jpg 766w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl3-300x230.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl3-600x461.jpg 600w" sizes="(max-width: 766px) 100vw, 766px" /></a><strong>Shown above:</strong> Extracted hopto.org html file using Wireshark File =&gt; Export Objects =&gt; HTTP and saving the file as a .htm</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl4.jpg"><img class="alignnone size-full wp-image-1827" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl4.jpg" alt="" width="1281" height="129" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl4.jpg 1281w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl4-300x30.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl4-768x77.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl4-1024x103.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl4-600x60.jpg 600w" sizes="(max-width: 1281px) 100vw, 1281px" /></a><strong>Shown above:</strong> Extracted .htm file from hopto.org opened in a text editor shows an iframe redirecting to the Neutrino Exploit Kit landing page.</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl5.jpg"><img class="alignnone size-full wp-image-1828" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl5.jpg" alt="" width="1274" height="737" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl5.jpg 1274w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl5-300x174.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl5-768x444.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl5-1024x592.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl5-638x368.jpg 638w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl5-900x520.jpg 900w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl5-600x347.jpg 600w" sizes="(max-width: 1274px) 100vw, 1274px" /></a><strong>Shown above:</strong> Using Wireshark&#8217;s filter &#8220;Follow TCP Stream&#8221; on packet 231 shows Neutrino exploiting flash</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl6.jpg"><img class="alignnone size-full wp-image-1829" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl6.jpg" alt="" width="1277" height="717" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl6.jpg 1277w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl6-300x168.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl6-768x431.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl6-1024x575.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/vtqckhl6-600x337.jpg 600w" sizes="(max-width: 1277px) 100vw, 1277px" /></a><strong>Shown above:</strong> Packet 365 shows partial content of Neutrino sending it malicious payload encrypted/obfuscated</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-desktop.jpg"><img class="alignnone size-full wp-image-1830" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-desktop.jpg" alt="" width="1022" height="665" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-desktop.jpg 1022w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-desktop-300x195.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-desktop-768x500.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-16-desktop-600x390.jpg 600w" sizes="(max-width: 1022px) 100vw, 1022px" /></a><strong>Shown above:</strong> Windows desktop post CrypMIC ransomware infection</p>
+<p>&nbsp;</p>
+<p><strong>MALICIOUS PAYLOAD ASSOCIATED WITH</strong> <strong>NEUTRINO EXPLOIT:</strong></p>
+<ul>
+<li>2016-08-16-Neutrino.EK.swf<br />
+<a href="https://www.virustotal.com/en/file/977c09c94d404e395f09fe8cc6903e7d9442d8253c56bbf6d62234707013df78/analysis/" target="_blank">Virus Total Link</a></li>
+<li>2016-08-16-rad339F3.tmp.dll<br />
+<a href="https://www.virustotal.com/en/file/646120107374aa4505042a6e3f4e63ee3f12d06282d0b79894736c96e6e50348/analysis/" target="_blank">Virus Total Link</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Rig Exploit Kit from 185.158.152.195 delivers Zbot banking malware</title>
+		<link>http://www.broadanalysis.com/2016/08/15/rig-exploit-kit-from-185-158-152-195-delivers-zbot-banking-malware/</link>
+		<comments>http://www.broadanalysis.com/2016/08/15/rig-exploit-kit-from-185-158-152-195-delivers-zbot-banking-malware/#comments</comments>
+		<pubDate>Tue, 16 Aug 2016 00:37:43 +0000</pubDate>
+		<dc:creator><![CDATA[Analysis]]></dc:creator>
+				<category><![CDATA[Pcap File]]></category>
+		<category><![CDATA[Rig Exploit Kit]]></category>
+		<category><![CDATA[Banking Malware]]></category>
+		<category><![CDATA[Malware analysis]]></category>
+		<category><![CDATA[Zbot]]></category>
+
+		<guid isPermaLink="false">http://www.broadanalysis.com/?p=1809</guid>
+		<description><![CDATA[NOTES: Today I captured traffic from the Rig Exploit Kit (EK) which delivered Zbot banking malware. Upon examining the Rig EK meta data, I found that it was encrypted using DoSWF. According to its website http://www.doswf.org/ DoSWF has been designed specifically for Adobe Flash SWF]]></description>
+				<content:encoded><![CDATA[<p><span id="more-1809"></span></p>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>Today I captured traffic from the Rig Exploit Kit (EK) which delivered Zbot banking malware.</li>
+<li>Upon examining the Rig EK meta data, I found that it was encrypted using DoSWF. According to its website <a href="http://www.doswf.org/" target="_blank">http://www.doswf.org/</a> DoSWF has been designed specifically for Adobe Flash SWF Files to keep your Actionscript shielded from would-be hackers! DoSWF guards your important Actionscript code from decompilers and reverse engineering techniques.</li>
+<li>Thanks to <a href="https://twitter.com/CyberScimitar" target="_blank">@CyberScimitar</a> for his assistance and providing additional indicators of compromise (IOC).</li>
+</ul>
+<p>I have added a zipped pcap file for your analysis. The password is the usual used by malware researchers. If you do not know it please email me.<br />
+info@broadanalysis.com</p>
+<p><strong>PCAP file of the infection traffic:<br />
+</strong><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-Rig-EK2-pcap.zip" target="_blank">2016-08-15-Rig-EK2-pcap.zip</a><strong><br />
+</strong></p>
+<p>&nbsp;</p>
+<p><strong>ASSOCIATED DOMAINS AND IP ADDRESSES:</strong></p>
+<ul>
+<li>185.158.152.195 &#8211; hgf.houstonworkshop.com &#8211; <strong>Rig EK LANDING PAGE</strong></li>
+<li>115.28.36.224 &#8211; www.doswf.com &#8211; <strong>FLASH ENCRYPTION</strong></li>
+<li>95.163.118.88 &#8211; specanomirasa.site (DNS QUERY)  &#8211; <strong>POST INFECTION TRAFFIC</strong></li>
+<li>95.163.118.88 &#8211; vetrogjkzoqe.site POST /forum/visitcounter.php  &#8211; <strong>POST INFECTION TRAFFIC</strong></li>
+<li>95.163.118.88 &#8211; vetrogjkzoqe.site GET /forum/js/d.dat  &#8211; <strong>POST INFECTION TRAFFIC</strong></li>
+<li>95.163.118.88 &#8211; vetrogjkzoqe.site GET /forum/js/e.dat  &#8211; <strong>POST INFECTION TRAFFIC</strong></li>
+<li>95.163.118.88 &#8211; vetrogjkzoqe.site GET /forum/js/f.dat  &#8211; <strong>POST INFECTION TRAFFIC</strong></li>
+<li>95.163.118.88 &#8211; vetrogjkzoqe.site GET /forum/js/out.dat  &#8211;<strong> POST INFECTION TRAFFIC</strong></li>
+<li>95.163.118.88 &#8211; vetrogjkzoqe.site GET /forum/js/g.dat  &#8211; <strong>POST INFECTION TRAFFIC</strong></li>
+<li>95.163.118.88 &#8211; vetrogjkzoqe.site GET /forum/js/h.dat  &#8211; <strong>POST INFECTION TRAFFIC</strong></li>
+<li>95.163.118.88 &#8211; vetrogjkzoqe.site POST /forum/visitcounter.php  &#8211; <strong>POST INFECTION TRAFFIC</strong></li>
+</ul>
+<p><strong>INDICATORS OF COMPROMISE (IOC) PROVIDED BY</strong> <a href="https://twitter.com/CyberScimitar" target="_blank">@CyberScimitar</a> :</p>
+<p><strong>C2s from 651B.tmp</strong><br />
+hxxp://specanomirasa[.]site/forum/visitcounter.php<br />
+hxxp://vetrogjkzoqe[.]site/forum/visitcounter.php</p>
+<p><strong>C2&#8217;s from lqrwcdijop.exe</strong><br />
+hxxp://baprikvssil[.]info/forum/visitcounter.php<br />
+hxxp://terbilkutavs[.]info/forum/visitcounter.php</p>
+<p>5.39.222.185:10090</p>
+<p><strong>DNS to domains</strong><br />
+hxxp://gerivpnosawq[.]info<br />
+hxxp://veryscotiansbel[.]site<br />
+hxxp://rebisaretox[.]info<br />
+hxxp://vetrogjkzoqe[.]site</p>
+<p>&nbsp;</p>
+<p><strong>IMAGES AND DETAILS OF INFECTION CHAIN:</strong></p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf1.jpg"><img class="alignnone size-full wp-image-1810" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf1.jpg" alt="" width="1276" height="360" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf1.jpg 1276w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf1-300x85.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf1-768x217.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf1-1024x289.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf1-600x169.jpg 600w" sizes="(max-width: 1276px) 100vw, 1276px" /></a><strong>Shown above:</strong> Network traffic  associated with the Rig exploit and Zbot infection</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index-1.jpg"><img class="alignnone size-full wp-image-1811" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index-1.jpg" alt="" width="1015" height="526" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index-1.jpg 1015w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index-1-300x155.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index-1-768x398.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index-1-600x311.jpg 600w" sizes="(max-width: 1015px) 100vw, 1015px" /></a><strong>Shown above:</strong> Injected script found on index page of compromised site which redirects visitor to the Rig EK landing page to start infection chain – Web page source code can be found by right clicking on web page and selecting “View source”</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf3.jpg"><img class="alignnone size-full wp-image-1814" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf3.jpg" alt="" width="1278" height="154" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf3.jpg 1278w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf3-300x36.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf3-768x93.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf3-1024x123.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf3-600x72.jpg 600w" sizes="(max-width: 1278px) 100vw, 1278px" /></a><strong>Shown above:</strong> Post infection DNS queries associated with Zbot infection</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf2.jpg"><img class="alignnone size-full wp-image-1812" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf2.jpg" alt="" width="1279" height="219" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf2.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf2-300x51.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf2-768x132.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf2-1024x175.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hgf2-600x103.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above:</strong> After extracting Rig flash exploit and saving as .swf file, decompiled using Flare <a href="http://www.nowrap.de/flare.html" target="_blank">(http://www.nowrap.de/flare.html)</a> and examined flash meta data with text editor. Meta data shows Rig EK flash file encrypted with DoSWF.</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-directory.jpg"><img class="alignnone size-full wp-image-1813" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-directory.jpg" alt="" width="800" height="600" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-directory.jpg 800w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-directory-300x225.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-directory-768x576.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-directory-600x450.jpg 600w" sizes="(max-width: 800px) 100vw, 800px" /></a><strong>Shown above:</strong> Post infection Windows directory and associated malicious files</p>
+<p>&nbsp;</p>
+<p><strong>MALICIOUS PAYLOAD ASSOCIATED WITH</strong> <strong>THE RIG EXPLOIT:</strong></p>
+<ul>
+<li>2016-08-15-Rig-EK.swf<br />
+<a href="https://www.virustotal.com/en/file/bde2ea0e5b3c6b8df9ddb71ec0bf39b31d657a60b15aaae88322ea8ac4d27725/analysis/" target="_blank">Virus Total Link</a></li>
+<li>2016-08-15-B6C5.tmp<br />
+<a href="https://www.virustotal.com/en/file/ebd9347bedbaed94de0f51e31c7c18dd6fc20c8e1e2aa5ad821929562b7cafe0/analysis/" target="_blank">Virus Total Link</a></li>
+<li>2016-08-15-ehspwjyte.dll<br />
+<a href="https://www.virustotal.com/en/file/e0281e40f39174ba9accd0f0134e80c0036ff56b95592b3212fc1d3db10ac897/analysis/" target="_blank">Virus Total Link</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2 class="ProfileHeaderCard-screenname u-inlineBlock u-dir" dir="ltr"></h2>
+]]></content:encoded>
+			<wfw:commentRss>http://www.broadanalysis.com/2016/08/15/rig-exploit-kit-from-185-158-152-195-delivers-zbot-banking-malware/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Rig Exploit Kit via EITEST delivers GootKit Banking Malware</title>
+		<link>http://www.broadanalysis.com/2016/08/15/rig-exploit-kit-via-eitest-delivers-gootkit-banking-malware/</link>
+		<comments>http://www.broadanalysis.com/2016/08/15/rig-exploit-kit-via-eitest-delivers-gootkit-banking-malware/#comments</comments>
+		<pubDate>Mon, 15 Aug 2016 18:01:50 +0000</pubDate>
+		<dc:creator><![CDATA[Analysis]]></dc:creator>
+				<category><![CDATA[EITEST]]></category>
+		<category><![CDATA[Pcap File]]></category>
+		<category><![CDATA[Rig Exploit Kit]]></category>
+		<category><![CDATA[Banking Malware]]></category>
+		<category><![CDATA[Malware analysis]]></category>
+
+		<guid isPermaLink="false">http://www.broadanalysis.com/?p=1789</guid>
+		<description><![CDATA[NOTES: Today I captured traffic from the Rig Exploit Kit (EK) which delivered GootKit banking malware via the EITEST campaign. It appears the EITEST campaign has switched from the Neutrino EK to the Rig EK. I last saw GootKit on July 5th, 2016 when it]]></description>
+				<content:encoded><![CDATA[<p><span id="more-1789"></span></p>
+<p><strong>NOTES</strong>:</p>
+<ul>
+<li>Today I captured traffic from the Rig Exploit Kit (EK) which delivered GootKit banking malware via the EITEST campaign.</li>
+<li>It appears the EITEST campaign has switched from the Neutrino EK to the Rig EK.</li>
+<li>I last saw GootKit on July 5th, 2016 when it was delivered via the Neutrino Exploit Kit and the Rig Exploit Kit [<a href="http://www.broadanalysis.com/2016/07/05/neutrino-ek-and-rig-ek-send-gootkit-a-brief-comparison/" target="_blank">HERE</a>].</li>
+<li>Thanks to <a href="https://twitter.com/malware_traffic" target="_blank">Brad</a> at <a href="http://www.malware-traffic-analysis.net/" target="_blank">Malware-Traffic-Analysis.net</a> for helping me identify the exploit kit.</li>
+</ul>
+<p>&nbsp;</p>
+<p>I have added a zipped pcap file for your analysis. The password is the usual used by malware researchers. If you do not know it please email me.<br />
+info@broadanalysis.com</p>
+<p><strong>PCAP file of the infection traffic:<br />
+</strong><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-Rig-EK-pcap.zip" target="_blank">2016-08-15-Rig-EK-pcap.zip</a><strong><br />
+</strong></p>
+<p>&nbsp;</p>
+<p><strong>ASSOCIATED DOMAINS AND IP ADDRESSES:</strong></p>
+<ul>
+<li>85.93.0.12 &#8211; rydogu.top – <strong>EITEST GATE</strong></li>
+<li>185.158.152.118 &#8211; free.giftofhair.org &#8211; <strong>RIG EK LANDING PAGE</strong></li>
+<li>5.157.38.50 &#8211; Port 80/443 mootwould.com – <strong>POST INFECTION TRAFFIC</strong></li>
+<li>5.157.38.50 &#8211; Port 80/443 gh0styns.com – <strong>POST INFECTION TRAFFIC</strong></li>
+<li>5.157.38.50 &#8211; Port 80/443 myfurer.org – <strong>POST INFECTION TRAFFIC</strong></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>IMAGES AND DETAILS OF INFECTION CHAIN:</strong></p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould1.jpg"><img class="alignnone size-full wp-image-1791" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould1.jpg" alt="" width="1280" height="219" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould1.jpg 1280w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould1-300x51.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould1-768x131.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould1-1024x175.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould1-600x103.jpg 600w" sizes="(max-width: 1280px) 100vw, 1280px" /></a><strong>Shown above:</strong> Network traffic  associated with the Rig exploit and GootKit infection</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index.jpg"><img class="alignnone size-full wp-image-1796" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index.jpg" alt="" width="954" height="315" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index.jpg 954w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index-300x99.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index-768x254.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-index-600x198.jpg 600w" sizes="(max-width: 954px) 100vw, 954px" /></a><strong>Shown above:</strong> Injected script found on index page of compromised site which redirects visitor to the EITEST gate to start infection chain – Web page source code can be found by right clicking on web page and selecting “View source”</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould4.jpg"><img class="alignnone size-full wp-image-1803" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould4.jpg" alt="" width="1279" height="695" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould4.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould4-300x163.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould4-768x417.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould4-1024x556.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould4-600x326.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above:</strong> Script found on EITEST gate redirecting to the Rig exploit landing page</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould2.jpg"><img class="alignnone size-full wp-image-1792" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould2.jpg" alt="" width="1279" height="170" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould2.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould2-300x40.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould2-768x102.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould2-1024x136.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould2-600x80.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above: </strong>DNS post infection traffic associated with the GootKit</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould3.jpg"><img class="alignnone size-full wp-image-1793" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould3.jpg" alt="" width="1279" height="701" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould3.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould3-300x164.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould3-768x421.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould3-1024x561.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/mootwould3-600x329.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above:</strong> Self signed SSL certificate organizationalUnitName=My Company Ltd associated with GootKit post infection</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-EITest-Rig-EK-events-ETPRO.jpg"><img class="alignnone size-full wp-image-1795" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-EITest-Rig-EK-events-ETPRO.jpg" alt="" width="1049" height="491" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-EITest-Rig-EK-events-ETPRO.jpg 1049w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-EITest-Rig-EK-events-ETPRO-300x140.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-EITest-Rig-EK-events-ETPRO-768x359.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-EITest-Rig-EK-events-ETPRO-1024x479.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-EITest-Rig-EK-events-ETPRO-600x281.jpg 600w" sizes="(max-width: 1049px) 100vw, 1049px" /></a><strong>Shown above:</strong> Alerts generated by the Emerging Threats ETPRO ruleset provided by <a href="https://twitter.com/malware_traffic" target="_blank">Brad</a> at <a href="http://www.malware-traffic-analysis.net/" target="_blank">malware-traffic-analysis.net</a></p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry1.jpg"><img class="alignnone size-full wp-image-1797" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry1.jpg" alt="" width="876" height="462" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry1.jpg 876w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry1-300x158.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry1-768x405.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry1-600x316.jpg 600w" sizes="(max-width: 876px) 100vw, 876px" /></a><strong>Shown above:</strong> Windows registry entry associated with GootKit infection</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry2.jpg"><img class="alignnone size-full wp-image-1798" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry2.jpg" alt="" width="876" height="462" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry2.jpg 876w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry2-300x158.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry2-768x405.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-15-registry2-600x316.jpg 600w" sizes="(max-width: 876px) 100vw, 876px" /></a><strong>Shown above:</strong> Another Windows registry entry associated with GootKit infection</p>
+<p>&nbsp;</p>
+<p><strong>MALICIOUS PAYLOAD ASSOCIATED WITH</strong> <strong>THE RIG EXPLOIT:</strong></p>
+<ul>
+<li>2016-08-15-Rig-EK.swf<br />
+<a href="https://www.virustotal.com/en/file/bde2ea0e5b3c6b8df9ddb71ec0bf39b31d657a60b15aaae88322ea8ac4d27725/analysis/" target="_blank">Virus Total Link</a></li>
+<li>2016-08-15-B6C5.tmp<br />
+<a href="https://www.virustotal.com/en/file/ebd9347bedbaed94de0f51e31c7c18dd6fc20c8e1e2aa5ad821929562b7cafe0/analysis/" target="_blank">Virus Total Link</a><br />
+C:\Users\%UserName%\AppData\Local\Temp\</li>
+<li>2016-08-15-ehspwjyte.dll<br />
+C:\Windows\SysWOW64\<br />
+<a href="https://www.virustotal.com/en/file/e0281e40f39174ba9accd0f0134e80c0036ff56b95592b3212fc1d3db10ac897/analysis/" target="_blank">Virus Total Link</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.broadanalysis.com/2016/08/15/rig-exploit-kit-via-eitest-delivers-gootkit-banking-malware/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Neutrino Exploit Kit via pseudoDarkleech delivers CrypMic Ransomware</title>
+		<link>http://www.broadanalysis.com/2016/08/14/neutrino-exploit-kit-via-pseudodarkleech-delivers-crypmic-ransomware-5/</link>
+		<pubDate>Sun, 14 Aug 2016 23:26:08 +0000</pubDate>
+		<dc:creator><![CDATA[Analysis]]></dc:creator>
+				<category><![CDATA[iframe]]></category>
+		<category><![CDATA[Neutrino Exploit Kit]]></category>
+		<category><![CDATA[Pcap File]]></category>
+		<category><![CDATA[pseudoDarkleech]]></category>
+		<category><![CDATA[Ransomware]]></category>
+		<category><![CDATA[CrypMic]]></category>
+		<category><![CDATA[Malware analysis]]></category>
+		<category><![CDATA[Malware Research]]></category>
+
+		<guid isPermaLink="false">http://www.broadanalysis.com/?p=1782</guid>
+		<description><![CDATA[NOTES: Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign with use of the Neutrino Exploit Kit. The injection method was an Iframe, as mentioned in a post on SANS Internet Storm Center forum Change]]></description>
+				<content:encoded><![CDATA[<p><span id="more-1782"></span></p>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign with use of the Neutrino Exploit Kit.</li>
+<li>The injection method was an Iframe, as mentioned in a post on SANS Internet Storm Center forum <a href="https://isc.sans.edu/forums/diary/Change+in+patterns+for+the+pseudoDarkleech+campaign/21217/" target="_blank">Change in patterns for the pseudoDarkleech campaign</a>.</li>
+<li>The pseudoDarkleech campaign is making use of DNS Shadowing as explained in a <a href="https://sucuri.net/" target="_blank">sucuri.net</a> blog post <a href="https://blog.sucuri.net/2015/12/evolution-of-pseudo-darkleech.html" target="_blank">Website Malware – Evolution of Pseudo Darkleech.  </a></li>
+<li>CrypMic continues to send its ransom notes over SSL port 443 in clear text.</li>
+<li>CrypMic is no longer using vssadmin.exe to delete the Windows shadow copy.</li>
+</ul>
+<p>I have added a zipped pcap file for your analysis. The password is the usual used by malware researchers. If you do not know it please email me.<br />
+info@broadanalysis.com</p>
+<p><strong>PCAP file of the infection traffic:<br />
+</strong><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-Neutrino-EK-pcap.zip" target="_blank">2016-08-14-Neutrino-EK-pcap.zip</a><strong><br />
+</strong></p>
+<p>&nbsp;</p>
+<p><strong>ASSOCIATED DOMAINS AND IP ADDRESSES</strong>:</p>
+<ul>
+<li>85.93.93.126 &#8211; yliampuvastidecher.presstheredbuttonnow.eu &#8211;<strong> Neutrino EK</strong></li>
+<li>85.14.243.9 Port 443 – <strong>C2 Check-In – POST INFECTION TRAFFIC</strong></li>
+</ul>
+<p><strong>ASSOCIATED DOMAINS FOR RANSOM PAYMENT:</strong></p>
+<p>http://ccjlwb22w6c22p2k.onion.to<br />
+http://ccjlwb22w6c22p2k.onion.city</p>
+<p>&nbsp;</p>
+<p><strong>IMAGES AND DETAILS OF INFECTION CHAIN</strong>:</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/yliampuvastidecher1.jpg"><img class="alignnone size-full wp-image-1783" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/yliampuvastidecher1.jpg" alt="" width="1280" height="243" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/yliampuvastidecher1.jpg 1280w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yliampuvastidecher1-300x57.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yliampuvastidecher1-768x146.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yliampuvastidecher1-1024x194.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/yliampuvastidecher1-600x114.jpg 600w" sizes="(max-width: 1280px) 100vw, 1280px" /></a><strong>Shown above:</strong> Traffic  associated with the Neutrino exploit and CrypMic ransomware infection.</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-index2.jpg"><img class="alignnone size-full wp-image-1784" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-index2.jpg" alt="" width="943" height="419" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-index2.jpg 943w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-index2-300x133.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-index2-768x341.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-index2-600x267.jpg 600w" sizes="(max-width: 943px) 100vw, 943px" /></a><strong>Shown above:</strong> Injected script found on compromised site redirecting to the Neutrino Exploit Kit landing page</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-desktop.jpg"><img class="alignnone size-full wp-image-1785" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-desktop.jpg" alt="" width="1023" height="628" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-desktop.jpg 1023w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-desktop-300x184.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-desktop-768x471.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-14-desktop-600x368.jpg 600w" sizes="(max-width: 1023px) 100vw, 1023px" /></a><strong>Shown above:</strong> Windows desktop post CrypMIC infection</p>
+<p>&nbsp;</p>
+<p><strong>MALICIOUS PAYLOAD ASSOCIATED WITH</strong> <strong>NEUTRINO EXPLOIT:</strong></p>
+<ul>
+<li>2016-08-14-Neutrino-EK.swf<br />
+<a href="https://www.virustotal.com/en/file/ba2e477589d4a8dee6ce27da2c1d98c8fe82ad49fbe435697a15b6e5f092efb0/analysis/" target="_blank">Virus Total Link</a></li>
+<li>2016-08-14-radE3B52.tmp.dll<br />
+<a href="https://www.virustotal.com/en/file/772889d1a2d039b63728885b728abde44dfe0f2d79908291e5efffd087b0a0f7/analysis/" target="_blank">Virus Total Link</a></li>
+</ul>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Neutrino Exploit Kit via EITEST 85.93.0.12 delivers CrypMic Ransomware</title>
+		<link>http://www.broadanalysis.com/2016/08/10/neutrino-exploit-kit-via-eitest-85-93-0-12-delivers-crypmic-ransomware-2/</link>
+		<pubDate>Wed, 10 Aug 2016 14:23:26 +0000</pubDate>
+		<dc:creator><![CDATA[Analysis]]></dc:creator>
+				<category><![CDATA[EITEST]]></category>
+		<category><![CDATA[Neutrino Exploit Kit]]></category>
+		<category><![CDATA[Pcap File]]></category>
+		<category><![CDATA[Ransomware]]></category>
+		<category><![CDATA[Albany NY]]></category>
+		<category><![CDATA[CrypMic]]></category>
+		<category><![CDATA[Malware analysis]]></category>
+
+		<guid isPermaLink="false">http://www.broadanalysis.com/?p=1763</guid>
+		<description><![CDATA[NOTES: Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the EITEST campaign. I first saw the EITEST campaign sending CrypMic Ransomware on July 28th, 2016. Some background on the EITEST campaign can be found in a Palo]]></description>
+				<content:encoded><![CDATA[<p><span id="more-1763"></span><br />
+<strong>NOTES:</strong></p>
+<ul>
+<li>Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the EITEST campaign.</li>
+<li>I first saw the EITEST campaign sending CrypMic Ransomware on July 28th, 2016.</li>
+<li>Some background on the EITEST campaign can be found in a Palo Alto Networks blog post <a href="http://researchcenter.paloaltonetworks.com/2016/03/unit42-how-the-eltest-campaigns-path-to-angler-ek-evolved-over-time/" target="_blank">How the EITest Campaign’s Path to Angler EK Evolved Over Time</a>.</li>
+<li>CrypMic continues to send its ransom notes over SSL port 443 in clear text.</li>
+<li>[UPDATE] CrypMic is no longer using vssadmin.exe to delete the Windows shadow copy. I first noticed this yesterday with another CrypMic infection via the pseudoDarkleech campaign.</li>
+<li>[UPDATE] The latest version of CrypMic can be downloaded from <a href="https://www.hybrid-analysis.com/sample/94bfc4636b130fb72a3c75515f94186d5256bd57f48520266a106c1aadd86ab6?environmentId=100" target="_blank">hybrid-analysis.com</a></li>
+<li>[UPDATE] For a great analysis and the reversing of the Neutrino Exploit Kit, visit <a href="https://twitter.com/Ledtech3" target="_blank"><small class="username"><s>@</s>Ledtech3</small></a> blog post <a href="https://pcsxcetrasupport3.wordpress.com/2016/08/09/pulling-apart-neutrino-ek/" target="_blank">Pulling apart Neutrino EK </a></li>
+</ul>
+<p>I have added a zipped pcap file for your analysis. The password is the usual used by malware researchers. If you do not know it please email me.<br />
+info@broadanalysis.com</p>
+<p><strong>PCAP file of the infection traffic:<br />
+</strong><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-Neutrino-EK-pcap.zip" target="_blank">2016-08-10-Neutrino-EK-pcap.zip</a></p>
+<p>&nbsp;</p>
+<p><strong>ASSOCIATED DOMAINS AND IP ADDRESSES</strong>:</p>
+<ul>
+<li>85.93.0.12 &#8211; osavity.top – <strong>EITEST GATE</strong></li>
+<li>69.175.20.6 &#8211; tulivyosikia.baexpert.org – <strong>Neutrino EK</strong> <strong>LANDING PAGE</strong></li>
+<li>85.14.243.9 Port 443 – <strong>C2 Check-In – POST INFECTION TRAFFIC</strong></li>
+</ul>
+<p><strong>ASSOCIATED DOMAINS FOR RANSOM PAYMENT:</strong></p>
+<p>http://7aggi2bq4bms4dfo.onion.to<br />
+http://7aggi2bq4bms4dfo.onion.city</p>
+<p>&nbsp;</p>
+<p><strong>IMAGES AND DETAILS OF INFECTION CHAIN:</strong></p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top1.jpg"><img class="alignnone size-full wp-image-1764" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top1.jpg" alt="" width="1279" height="247" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top1.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top1-300x58.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top1-768x148.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top1-1024x198.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top1-600x116.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above:</strong> Network traffic  associated with the Neutrino exploit and CrypMic ransomware infection</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-index.jpg"><img class="alignnone size-full wp-image-1765" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-index.jpg" alt="" width="1015" height="526" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-index.jpg 1015w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-index-300x155.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-index-768x398.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-index-600x311.jpg 600w" sizes="(max-width: 1015px) 100vw, 1015px" /></a><strong>Shown above:</strong> Injected script found on index page of compromised site which redirects visitor to the EITEST gate to start infection chain &#8211; Web page source code can be found by right clicking on web page and selecting &#8220;View source&#8221;</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top2.jpg"><img class="alignnone size-full wp-image-1766" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top2.jpg" alt="" width="1279" height="754" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top2.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top2-300x177.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top2-768x453.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top2-1024x604.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top2-600x354.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above:</strong> Script on EITEST gate 85.93.0.12  redirecting to the Neutrino EK landing page</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top3.jpg"><img class="alignnone size-full wp-image-1767" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top3.jpg" alt="" width="1277" height="685" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top3.jpg 1277w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top3-300x161.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top3-768x412.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top3-1024x549.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top3-600x322.jpg 600w" sizes="(max-width: 1277px) 100vw, 1277px" /></a><strong>Shown above:</strong> After being redirected to the Neutrino EK landing page, Neutrino then exploits flash</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top4.jpg"><img class="alignnone size-full wp-image-1768" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top4.jpg" alt="" width="1279" height="716" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top4.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top4-300x168.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top4-768x430.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top4-1024x573.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top4-600x336.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above:</strong> After Neutrino EK exploits flash it then sends its malicious payload in encrypted or obfuscated format</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top5.jpg"><img class="alignnone size-full wp-image-1770" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top5.jpg" alt="" width="1273" height="852" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top5.jpg 1273w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top5-300x201.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top5-768x514.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top5-1024x685.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top5-600x402.jpg 600w, http://www.broadanalysis.com/wp-content/uploads/2016/08/osavity-top5-210x140.jpg 210w" sizes="(max-width: 1273px) 100vw, 1273px" /></a><strong>Shown above: </strong>CrypMic is no longer using vssadmin.exe to delete Windows shadow copy as shown in <a href="https://www.hybrid-analysis.com/sample/94bfc4636b130fb72a3c75515f94186d5256bd57f48520266a106c1aadd86ab6?environmentId=100" target="_blank">hybrid-analysis.com</a> analysis of the malicious DLL file.</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-ransom-txt.jpg"><img class="alignnone size-full wp-image-1772" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-ransom-txt.jpg" alt="" width="768" height="577" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-ransom-txt.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-ransom-txt-300x225.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-10-ransom-txt-600x451.jpg 600w" sizes="(max-width: 768px) 100vw, 768px" /></a><strong>Shown above:</strong> CrypMic .TXT ransom note and De-Crypt instructions README.txt</p>
+<p>&nbsp;</p>
+<p><strong>MALICIOUS PAYLOAD ASSOCIATED WITH</strong> <strong>NEUTRINO EXPLOIT:</strong></p>
+<ul>
+<li>2016-08-10-Neutrino-EK.swf<br />
+<a href="https://www.virustotal.com/en/file/7d8db4012cdb2b158934ea629a293542c8e4ff671833d4bad3af03f38195d7c1/analysis/" target="_blank">Virus Total Link</a></li>
+<li>2016-08-10-radF0EDA.tmp.dll<br />
+<a href="https://www.virustotal.com/en/file/94bfc4636b130fb72a3c75515f94186d5256bd57f48520266a106c1aadd86ab6/analysis/" target="_blank">Virus Total Link</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>New C2 &#8211; Neutrino Exploit Kit via pseudoDarkleech HOPTO.ORG gate delivers CrypMic Ransomware</title>
+		<link>http://www.broadanalysis.com/2016/08/08/new-c2-neutrino-exploit-kit-via-pseudodarkleech-hopto-org-gate-delivers-crypmic-ransomware/</link>
+		<comments>http://www.broadanalysis.com/2016/08/08/new-c2-neutrino-exploit-kit-via-pseudodarkleech-hopto-org-gate-delivers-crypmic-ransomware/#comments</comments>
+		<pubDate>Mon, 08 Aug 2016 17:23:09 +0000</pubDate>
+		<dc:creator><![CDATA[Analysis]]></dc:creator>
+				<category><![CDATA[Neutrino Exploit Kit]]></category>
+		<category><![CDATA[Pcap File]]></category>
+		<category><![CDATA[pseudoDarkleech]]></category>
+		<category><![CDATA[Ransomware]]></category>
+		<category><![CDATA[Albany NY]]></category>
+		<category><![CDATA[CrypMic]]></category>
+
+		<guid isPermaLink="false">http://www.broadanalysis.com/?p=1756</guid>
+		<description><![CDATA[NOTES: Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign. The pseudoDarkleech campaign used the “hopto.org” gate to redirect to the Neutrino Exploit Kit (EK) landing page. CrypMic is using a new Command and Control]]></description>
+				<content:encoded><![CDATA[<p><span id="more-1756"></span></p>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign.</li>
+<li>The pseudoDarkleech campaign used the “hopto.org” gate to redirect to the Neutrino Exploit Kit (EK) landing page.</li>
+<li>CrypMic is using a new Command and Control server and continues to send its ransom notes over SSL port 443 in clear text.</li>
+</ul>
+<p>I have added a zipped pcap file for your analysis. The password is the usual used by malware researchers. If you do not know it please email me.<br />
+info@broadanalysis.com</p>
+<p><strong>PCAP file of the infection traffic:<br />
+</strong><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-Neutrino-EK-pcap2.zip" target="_blank">2016-08-08-Neutrino-EK-pcap2.zip</a><strong><br />
+</strong></p>
+<p>&nbsp;</p>
+<p><strong>ASSOCIATED DOMAINS AND IP ADDRESSES</strong>:</p>
+<ul>
+<li>83.217.27.178 &#8211; jkgbpsh.hopto.org – <strong>Redirect GATE</strong></li>
+<li>51.254.30.225 &#8211; saveoldclinicas.propertymanager.eu.com – <strong>Netrino EK</strong></li>
+<li>85.14.243.9 – Port 443 Clear text<strong> – C2 Check-In – POST INFECTION TRAFFIC</strong><br />
+Germany, AS24961 myLoc managed IT AG,</li>
+</ul>
+<p><strong>ASSOCIATED DOMAINS FOR RANSOM PAYMENT:</strong></p>
+<p>http://ccjlwb22w6c22p2k.onion.to<br />
+http://ccjlwb22w6c22p2k.onion.city</p>
+<p>&nbsp;</p>
+<p><strong>IMAGES AND DETAILS OF INFECTION CHAIN</strong>:</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas1.jpg"><img class="alignnone size-full wp-image-1757" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas1.jpg" alt="" width="1280" height="247" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas1.jpg 1280w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas1-300x58.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas1-768x148.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas1-1024x198.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas1-600x116.jpg 600w" sizes="(max-width: 1280px) 100vw, 1280px" /></a><strong>Shown above:</strong> Traffic  associated with the Neutrino exploit and CrypMic ransomware infection. (Note CrypMic using new C2 85.14.243.9)</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas2.jpg"><img class="alignnone size-full wp-image-1758" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas2.jpg" alt="" width="1279" height="452" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas2.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas2-300x106.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas2-768x271.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas2-1024x362.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas2-600x212.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above:</strong> Injected script found on compromised site redirecting to “hopto.org” gate</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas3.jpg"><img class="alignnone size-full wp-image-1759" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas3.jpg" alt="" width="1279" height="687" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas3.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas3-300x161.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas3-768x413.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas3-1024x550.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas3-600x322.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above:</strong> CrypMic post infection traffic over port 443 in clear text shows partial content of HTML ransom note delivered over clear text.</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas4.jpg"><img class="alignnone size-full wp-image-1760" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas4.jpg" alt="" width="1260" height="922" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas4.jpg 1260w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas4-300x220.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas4-768x562.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas4-1024x749.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/saveoldclinicas4-600x439.jpg 600w" sizes="(max-width: 1260px) 100vw, 1260px" /></a>Shown above: <a href="https://www.hybrid-analysis.com/sample/08887dcc5629a440cf816e2959a8db80dca5e679d8836682007009717d71a425?environmentId=100" target="_blank">Hybrid-analysis.net</a> shows post infection communication with C2</p>
+<p>&nbsp;</p>
+<p><strong>MALICIOUS PAYLOAD ASSOCIATED WITH</strong> <strong>NEUTRINO EXPLOIT:</strong></p>
+<p>2016-08-08-Neutrino-EK.swf<br />
+<a href="https://www.virustotal.com/en/file/34cac6f94eb6abf36e7a6d3191321c079521ebfe5f2cc6d931df789f8e387d05/analysis/1470676136/" target="_blank">Virus Total Link</a><br />
+2016-08-08-rad726D0.tmp.dll<br />
+<a href="https://www.virustotal.com/en/file/08887dcc5629a440cf816e2959a8db80dca5e679d8836682007009717d71a425/analysis/" target="_blank">Virus Total Link</a><br />
+<a href="https://www.hybrid-analysis.com/sample/08887dcc5629a440cf816e2959a8db80dca5e679d8836682007009717d71a425?environmentId=100" target="_blank">Hybrid-Analysis Link</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.broadanalysis.com/2016/08/08/new-c2-neutrino-exploit-kit-via-pseudodarkleech-hopto-org-gate-delivers-crypmic-ransomware/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Neutrino Exploit Kit via pseudoDarkleech delivers CrypMic Ransomware</title>
+		<link>http://www.broadanalysis.com/2016/08/08/neutrino-exploit-kit-via-pseudodarkleech-delivers-crypmic-ransomware-4/</link>
+		<pubDate>Mon, 08 Aug 2016 15:03:26 +0000</pubDate>
+		<dc:creator><![CDATA[Analysis]]></dc:creator>
+				<category><![CDATA[Neutrino Exploit Kit]]></category>
+		<category><![CDATA[Pcap File]]></category>
+		<category><![CDATA[pseudoDarkleech]]></category>
+		<category><![CDATA[Ransomware]]></category>
+		<category><![CDATA[CrypMic]]></category>
+		<category><![CDATA[Malware analysis]]></category>
+
+		<guid isPermaLink="false">http://www.broadanalysis.com/?p=1741</guid>
+		<description><![CDATA[NOTES: Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign with use of the Neutrino Exploit Kit. The injection method was an Iframe, as mentioned in a post on SANS Internet Storm Center forum Change]]></description>
+				<content:encoded><![CDATA[<p><span id="more-1741"></span></p>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign with use of the Neutrino Exploit Kit.</li>
+<li>The injection method was an Iframe, as mentioned in a post on SANS Internet Storm Center forum <a href="https://isc.sans.edu/forums/diary/Change+in+patterns+for+the+pseudoDarkleech+campaign/21217/" target="_blank">Change in patterns for the pseudoDarkleech campaign</a>.</li>
+<li>The pseudoDarkleech campaign is making use of DNS Shadowing as explained in a <a href="https://sucuri.net/" target="_blank">sucuri.net</a> blog post <a href="https://blog.sucuri.net/2015/12/evolution-of-pseudo-darkleech.html" target="_blank">Website Malware – Evolution of Pseudo Darkleech.  </a></li>
+<li>UPDATE: URL&#8217;s to ransom payment sites have changed.</li>
+<li>UPDATE: My infected computer was unable to communicate with the command and control (C2) server, however CrypMic was able to complete the infection.</li>
+</ul>
+<p>I have added a zipped pcap file for your analysis. The password is the usual used by malware researchers. If you do not know it please email me.<br />
+info@broadanalysis.com</p>
+<p><strong>PCAP file of the infection traffic:<br />
+</strong><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-Neutrino-EK-pcap.zip" target="_blank">2016-08-08-Neutrino-EK-pcap.zip</a><strong><br />
+</strong></p>
+<p>&nbsp;</p>
+<p><strong>ASSOCIATED DOMAINS AND IP ADDRESSES</strong>:</p>
+<ul>
+<li>96.127.174.218 &#8211; cystogenuscorrellations.metaldehyde-stewardship.co.uk – <strong>Neutrino EK</strong></li>
+<li>193.111.140.100  PORT 443 &#8211; Clear Text –<strong> C2 HOST UNAVAILABLE </strong></li>
+</ul>
+<p><strong>ASSOCIATED DOMAINS FOR RANSOM PAYMENT:</strong></p>
+<p>http://xijymvzq4zkyubfe.onion.to<br />
+http://xijymvzq4zkyubfe.onion.city</p>
+<p>&nbsp;</p>
+<p><strong>IMAGES AND DETAILS OF INFECTION CHAIN:</strong></p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations1.jpg"><img class="alignnone size-full wp-image-1744" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations1.jpg" alt="" width="1281" height="297" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations1.jpg 1281w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations1-300x70.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations1-768x178.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations1-1024x237.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations1-600x139.jpg 600w" sizes="(max-width: 1281px) 100vw, 1281px" /></a><strong>Shown above:</strong> Traffic  associated with the Neutrino exploit and CrypMIC ransomware infection. It appears the CrypMic  command and control (C2) server is down. CrypMic was unable to complete the TCP 3 way handshake as explained [<a href="http://www.tcpipguide.com/free/t_TCPConnectionEstablishmentProcessTheThreeWayHandsh-3.htm" target="_blank">HERE</a>]</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-index.jpg"><img class="alignnone size-full wp-image-1745" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-index.jpg" alt="" width="1279" height="307" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-index.jpg 1279w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-index-300x72.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-index-768x184.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-index-1024x246.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-index-600x144.jpg 600w" sizes="(max-width: 1279px) 100vw, 1279px" /></a><strong>Shown above:</strong> Injected iframe script found on index page of compromised site. The Index page was extracted from the pcap file using Wireshark filter File =&gt; Export Objects =&gt; HTTP.</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations2.jpg"><img class="alignnone size-full wp-image-1746" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations2.jpg" alt="" width="1280" height="708" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations2.jpg 1280w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations2-300x166.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations2-768x425.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations2-1024x566.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations2-600x332.jpg 600w" sizes="(max-width: 1280px) 100vw, 1280px" /></a><strong>Shown above:</strong> Partial content of packet 139 from Neutrino landing page shows Neutrino exploiting an outdated version of flash</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations3.jpg"><img class="alignnone size-full wp-image-1747" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations3.jpg" alt="" width="1280" height="714" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations3.jpg 1280w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations3-300x167.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations3-768x428.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations3-1024x571.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/cystogenuscorrellations3-600x335.jpg 600w" sizes="(max-width: 1280px) 100vw, 1280px" /></a><strong>Shown above:</strong> Partial content of packet 223 shows malicious payload being delivered in encrypted or obfuscated code</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-html.jpg"><img class="alignnone size-full wp-image-1748" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-html.jpg" alt="" width="800" height="560" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-html.jpg 800w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-html-300x210.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-html-768x538.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-html-600x420.jpg 600w" sizes="(max-width: 800px) 100vw, 800px" /></a><strong>Shown above:</strong> CrypMic .HTML ransom note and De-Crypt instructions README.HTML [Raw un-formatted html]</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-txt.jpg"><img class="alignnone size-full wp-image-1750" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-txt.jpg" alt="" width="768" height="526" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-txt.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-txt-300x205.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-08-ransom-txt-600x411.jpg 600w" sizes="(max-width: 768px) 100vw, 768px" /></a><strong>Shown above:</strong> CrypMic README.txt ransom note showing new ransom payment URL&#8217;s</p>
+<p>&nbsp;</p>
+<p><strong>MALICIOUS PAYLOAD ASSOCIATED WITH</strong> <strong>NEUTRINO EXPLOIT:</strong></p>
+<ul>
+<li>2016-08-08-Neutrino-EK<br />
+<a href="https://www.virustotal.com/en/file/34beed74ec5ce40b75ee7154f3096d0f587a87524c896ffc54f11d0cfaceeab8/analysis/" target="_blank">Virus Total Link</a></li>
+<li>2016-08-08-rad56520.tmp.dll<br />
+<a href="https://www.virustotal.com/en/file/1a1f9366c319ecf119241e41d7b6d06094423d771077a26a89cc8e36eff81d18/analysis/" target="_blank">Virus Total Link</a><br />
+<a href="https://www.hybrid-analysis.com/sample/1a1f9366c319ecf119241e41d7b6d06094423d771077a26a89cc8e36eff81d18?environmentId=100" target="_blank">Hybrid-Analysis Link</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Neutrino Exploit Kit via pseudoDarkleech delivers CrypMic Ransomware</title>
+		<link>http://www.broadanalysis.com/2016/08/04/neutrino-exploit-kit-via-pseudodarkleech-delivers-crypmic-ransomware-3/</link>
+		<pubDate>Thu, 04 Aug 2016 16:27:33 +0000</pubDate>
+		<dc:creator><![CDATA[Analysis]]></dc:creator>
+				<category><![CDATA[Neutrino Exploit Kit]]></category>
+		<category><![CDATA[Pcap File]]></category>
+		<category><![CDATA[pseudoDarkleech]]></category>
+		<category><![CDATA[Ransomware]]></category>
+		<category><![CDATA[CrypMic]]></category>
+
+		<guid isPermaLink="false">http://www.broadanalysis.com/?p=1728</guid>
+		<description><![CDATA[NOTES: Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign. The injection method was an Iframe, as mentioned in a post on SANS Internet Storm Center forum Change in patterns for the pseudoDarkleech campaign. The]]></description>
+				<content:encoded><![CDATA[<p><strong><br />
+</strong><span id="more-1728"></span><br />
+<strong>NOTES:</strong></p>
+<ul>
+<li>Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign.</li>
+<li>The injection method was an Iframe, as mentioned in a post on SANS Internet Storm Center forum <a href="https://isc.sans.edu/forums/diary/Change+in+patterns+for+the+pseudoDarkleech+campaign/21217/" target="_blank">Change in patterns for the pseudoDarkleech campaign</a>.</li>
+<li>The pseudoDarkleech campaign is making use of DNS Shadowing as explained in a <a href="https://sucuri.net/" target="_blank">sucuri.net</a> blog post <a href="https://blog.sucuri.net/2015/12/evolution-of-pseudo-darkleech.html" target="_blank">Website Malware – Evolution of Pseudo Darkleech.  </a></li>
+<li>CrypMic continues to send its ransom notes over SSL port 443 in clear text.</li>
+<li>I found a suspicious JavaScript on the compromised site. It appears to possibly fingerprint the visiting computer. The script did not cause communication with with my computer. A similar script was found on a compromised site from August 2nd, 2016 <a href="http://www.broadanalysis.com/2016/08/02/neutrino-exploit-kit-via-pseudodarkleech-delivers-crypmic-ransomware-2/" target="_blank">Neutrino Exploit Kit via pseudoDarkleech delivers CrypMic Ransomware.</a> In that instance the script did cause communication with my computer.</li>
+<li>Thanks to <a href="https://twitter.com/theforcedk" target="_blank">@theforcedk</a> for his JavaScript expertise.</li>
+</ul>
+<p>I have added a zipped pcap file for your analysis. The password is the usual used by malware researchers. If you do not know it please email me.<br />
+info@broadanalysis.com</p>
+<p><strong>PCAP file of the infection traffic:<br />
+</strong><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-Neutrino-EK-pcap.zip" target="_blank">2016-08-04-Neutrino-EK-pcap.zip</a><strong><br />
+</strong></p>
+<p>&nbsp;</p>
+<p><strong>ASSOCIATED DOMAINS AND IP ADDRESSES</strong>:</p>
+<ul>
+<li>85.25.107.121 &#8211; walbornvertakkings.traceyconcrete.co.uk – <strong>Neutrino EK</strong></li>
+<li>193.111.140.100 – PORT 443 –<strong> C2 Check-In – POST INFECTION TRAFFIC</strong></li>
+</ul>
+<p><strong>ASSOCIATED DOMAINS FOR RANSOM PAYMENT:</strong></p>
+<p>http://ccjlwb22w6c22p2k.onion.to<br />
+http://ccjlwb22w6c22p2k.onion.city</p>
+<p>&nbsp;</p>
+<p><strong>IMAGES AND DETAILS OF INFECTION CHAIN:</strong></p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/walbornvertakkings1.jpg"><img class="alignnone size-full wp-image-1730" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/walbornvertakkings1.jpg" alt="" width="1281" height="232" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/walbornvertakkings1.jpg 1281w, http://www.broadanalysis.com/wp-content/uploads/2016/08/walbornvertakkings1-300x54.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/walbornvertakkings1-768x139.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/walbornvertakkings1-1024x185.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/walbornvertakkings1-600x109.jpg 600w" sizes="(max-width: 1281px) 100vw, 1281px" /></a><strong>Shown above:</strong> Traffic  associated with Neutrino exploit and CrypMIC ransomware infection</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index.jpg"><img class="alignnone size-full wp-image-1731" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index.jpg" alt="" width="1005" height="449" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index.jpg 1005w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index-300x134.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index-768x343.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index-600x268.jpg 600w" sizes="(max-width: 1005px) 100vw, 1005px" /></a><strong>Shown above:</strong> Suspicious script found on compromised site. A similar script was found on another compromised site on August 2nd, 2016 [<a href="http://www.broadanalysis.com/2016/08/02/neutrino-exploit-kit-via-pseudodarkleech-delivers-crypmic-ransomware-2/" target="_blank">HERE</a>]</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index3.jpg"><img class="alignnone size-full wp-image-1732" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index3.jpg" alt="" width="1005" height="449" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index3.jpg 1005w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index3-300x134.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index3-768x343.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-04-index3-600x268.jpg 600w" sizes="(max-width: 1005px) 100vw, 1005px" /></a><strong>Shown above:</strong> Injected iframe script found on index page of compromised site</p>
+<p>&nbsp;</p>
+<p><strong>MALICIOUS PAYLOAD ASSOCIATED WITH</strong> <strong>NEUTRINO EXPLOIT:</strong></p>
+<p>2016-08-04-Neutrino-EK.swf<br />
+<a href="https://www.virustotal.com/en/file/a871912eb19b59bd699fe5e5a1fe88fc2d648246e69d2844f72986dc43ba1f59/analysis/" target="_blank">Virus Total Link</a><br />
+2016-08-04-rad38E0B.tmp.dll<br />
+<a href="https://www.virustotal.com/en/file/6d8674e6796236567352675a981be5937f3b3843ecb82cd800bcc48a478b73f0/analysis/" target="_blank">Virus Total Link</a></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Neutrino Exploit Kit via pseudoDarkleech HOPTO.ORG gate delivers CrypMic Ransomware</title>
+		<link>http://www.broadanalysis.com/2016/08/03/neutrino-exploit-kit-via-pseudodarkleech-hopto-org-gate-delivers-crypmic-ransomware/</link>
+		<pubDate>Wed, 03 Aug 2016 23:25:26 +0000</pubDate>
+		<dc:creator><![CDATA[Analysis]]></dc:creator>
+				<category><![CDATA[Neutrino Exploit Kit]]></category>
+		<category><![CDATA[Pcap File]]></category>
+		<category><![CDATA[pseudoDarkleech]]></category>
+		<category><![CDATA[Ransomware]]></category>
+		<category><![CDATA[CrypMic]]></category>
+
+		<guid isPermaLink="false">http://www.broadanalysis.com/?p=1721</guid>
+		<description><![CDATA[NOTES: Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign. The pseudoDarkleech campaign used the &#8220;hopto.org&#8221; gate to redirect to the Neutrino Exploit Kit (EK) landing page. CrypMic continues to send its ransom notes over]]></description>
+				<content:encoded><![CDATA[<p><span id="more-1721"></span></p>
+<p><strong>NOTES:</strong></p>
+<ul>
+<li>Today I captured traffic from the latest version of CrypMic ransomware. The ransomware was delivered via the pseudoDarkleech campaign.</li>
+<li>The pseudoDarkleech campaign used the &#8220;hopto.org&#8221; gate to redirect to the Neutrino Exploit Kit (EK) landing page.</li>
+<li>CrypMic continues to send its ransom notes over SSL port 443 in clear text.</li>
+</ul>
+<p>I have added a zipped pcap file for your analysis. The password is the usual used by malware researchers. If you do not know it please email me.<br />
+info@broadanalysis.com</p>
+<p><strong>PCAP file of the infection traffic:<br />
+</strong><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-03-Neutrino-EK-2-pcap.zip" target="_blank">2016-08-03-Neutrino-EK-2-pcap.zip</a></p>
+<p>&nbsp;</p>
+<p><strong>ASSOCIATED DOMAINS AND IP ADDRESSES</strong>:</p>
+<ul>
+<li>83.217.27.178 &#8211; umattj.hopto.org &#8211; <strong>Redirect GATE</strong></li>
+<li>138.201.210.155 &#8211; vaihdoskysymyksen.itsport.co.uk &#8211; <strong>Netrino EK</strong></li>
+<li>193.111.140.100 &#8211; Port 443 – <strong>C2 Check-In – POST INFECTION TRAFFIC</strong></li>
+</ul>
+<p><strong>ASSOCIATED DOMAINS FOR RANSOM PAYMENT:</strong></p>
+<p>http://ccjlwb22w6c22p2k.onion.to<br />
+http://ccjlwb22w6c22p2k.onion.city</p>
+<p>&nbsp;</p>
+<p><strong>IMAGES AND DETAILS OF INFECTION CHAIN:</strong></p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org1.jpg"><img class="alignnone size-full wp-image-1722" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org1.jpg" alt="" width="1280" height="248" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org1.jpg 1280w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org1-300x58.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org1-768x149.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org1-1024x198.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org1-600x116.jpg 600w" sizes="(max-width: 1280px) 100vw, 1280px" /></a><strong>Shown above:</strong> Traffic  associated with the Neutrino exploit and CrypMic ransomware infection</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org2.jpg"><img class="alignnone size-full wp-image-1723" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org2.jpg" alt="" width="1280" height="718" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org2.jpg 1280w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org2-300x168.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org2-768x431.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org2-1024x574.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org2-600x337.jpg 600w" sizes="(max-width: 1280px) 100vw, 1280px" /></a><strong>Shown above:</strong> Injected script found on compromised site redirecting to &#8220;hopto.org&#8221; gate</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org3.jpg"><img class="alignnone size-full wp-image-1724" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org3.jpg" alt="" width="1280" height="153" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org3.jpg 1280w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org3-300x36.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org3-768x92.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org3-1024x122.jpg 1024w, http://www.broadanalysis.com/wp-content/uploads/2016/08/hopto-org3-600x72.jpg 600w" sizes="(max-width: 1280px) 100vw, 1280px" /></a><strong>Shown above:</strong> Extracted HTML file from packet 36 and saved as an .htm file. After using text editor to open, it shows script on &#8220;hopto.org&#8221; redirecting to the Neutrino EK landing page.</p>
+<p>&nbsp;</p>
+<p><a href="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-03-ransom-text.jpg"><img class="alignnone size-full wp-image-1725" src="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-03-ransom-text.jpg" alt="" width="768" height="552" srcset="http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-03-ransom-text.jpg 768w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-03-ransom-text-300x216.jpg 300w, http://www.broadanalysis.com/wp-content/uploads/2016/08/2016-08-03-ransom-text-600x431.jpg 600w" sizes="(max-width: 768px) 100vw, 768px" /></a><strong>Shown above:</strong> CrypMic .TXT ransom note and De-Crypt instructions README.txt</p>
+<p>&nbsp;</p>
+<p><strong>MALICIOUS PAYLOAD ASSOCIATED WITH</strong> <strong>NEUTRINO EXPLOIT:</strong></p>
+<ul>
+<li>2016-08-03-Neutrino-EK.swf<br />
+<a href="https://www.virustotal.com/en/file/cc660e0f4f2a707cd3caf14b024f3d0bcf55cb51a8a5e17b3803dde1ba255523/analysis/" target="_blank">Virus Total Link</a></li>
+<li>2016-08-03-radD0695.tmp.dll<br />
+<a href="https://www.virustotal.com/en/file/408420fe45c56460f279d818c7fa4488d2543e952e7078880bd0c59b2b94e31f/analysis/" target="_blank">Virus Total Link</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

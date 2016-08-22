@@ -43,7 +43,7 @@ class GetFeeds:
 			sys.exit()
 		else:
 			for item in self.feeds:
-				self.outfile = self._buildOutFile(item)
+				self.outfile = feed  #self._buildOutFile(item)
 				self.outDir = self._buildOutDir(item)
 				self.feedDstDir = self.feedDstRootDir + self.outDir
 				self.outURL = self._buildOutURL()
