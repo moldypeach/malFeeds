@@ -24,8 +24,6 @@ class ParseFeeds:
 	def __init__(self):
 		#List of blog URLs
 		self.blogFeed = []
-		#Store etries in each blog RSS/ATOM feed
-		self.feedEntries = []
 		#Dictionary holding each feed and its associated entries (links)
 		self.feedDict = {}
 		#Create/load database
@@ -78,29 +76,62 @@ class ParseFeeds:
 		tmp = self.feedDstRootDir + self.outDir + "/" + self.outfile
 		return tmp.strip(' \n\r\t')
 #Return MD5 hash of an entire file in binary mode
-	def genFileMD5(self,inFile):
+	def encFileMD5(self,inFile):
  		return hashlib.md5(open(inFile, mode='rb').read()).hexdigest()
 #Return MD5 hash of a string converted to utf-8, which returns a bytes object
-	def genStrMD5(self,inStr):
+	def encStrMD5(self,inStr):
 		return hashlib.md5(inStr.encode("utf-8")).hexdigest()
 #Return MD5 hash of a byyes object
-	def genBytesMD5(self, bObj):
+	def encBytesMD5(self, bObj):
 		return hashlib.md5(bObj).hexdigest()
 #Return Base64 encoded bytes object from string
-	def genStrB64(self, inStr):
+	def encStrB64(self, inStr):
 		return base64.b64encode(inStr.encode('utf-8'))
+#Return decoded Base64 string object from bytes
+	def decStrB64(self, bObj):
+		return base64.b64decode(bObj).decode('utf-8')
 #Return Key for dictonary of blog feeds from feedparser link
 	def genDictKey(self, inStr):
 		return inStr.split('.').pop(1)
-
+#Utilize feedparser to populate dictionary of entries from each URL in feeds/sources
+# ***Eventually a test should be conducted for Internet connectivity prior to running!***
 	def parseFeeds(self):
 		#Get, and iterate, through each feed URL from sources folder
 		for feed in self.blogFeed:
+			#Create Feed Parser object from source URL
 			fp = feedparser.parse(feed)
-			print(fp.modified)
+			#Temporarily store entries from each blog RSS/ATOM feed
+			feedEntries = []
 			
 			for item in fp.entries:
-				self.feedEntries.append([self.genStrMD5(item.link), item.link.encode('utf-8')])
-			self.feedDict[self.genStrB64(self.genDictKey(fp.feed.link))] = self.feedEntries
-		print(self.feedDict.keys())
+				#List: [hash of feed entry link, plaintext feed entry link]
+				feedEntries.append([self.encStrMD5(item.link), item.link.encode('utf-8')])
+			#Dictionary of each feed source. key is base64 of feed hostname, and value is list of entries
+			self.feedDict[self.encStrB64(self.genDictKey(fp.feed.link))] = [self.encStrMD5(fp.modified), feedEntries]
+			#Delete before next iteration - prevent duplication
+			del(fp)
+			del(feedEntries)
 
+#Print out the dictionary of feed entries
+	def printDict(self):
+		try:
+			self.feedDict
+		except NameError:
+			msg = "self.feedDict is not defined"
+			print(msg)
+		else:
+			if (len(self.feedDict.keys())):
+				for key in self.feedDict.keys():
+					feedTitle = "Feed: " + self.decStrB64(key)
+					lastModified = "Last Modified hash: " + self.feedDict[key][0]
+					br = ""
+					for x in range(0,80):
+						br += "="					
+					print(feedTitle + "\n" + lastModified + "\n" + br)
+					for i,j in self.feedDict[key][1]:
+						linkHash = i
+						link = j.decode('utf-8')
+						print("Link hash: " + linkHash + "\n  " + link)
+			else:
+				msg = "Error: self.feedDict contains no entries"
+				print(msg)				
