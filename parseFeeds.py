@@ -102,12 +102,19 @@ class ParseFeeds:
 			fp = feedparser.parse(feed)
 			#Temporarily store entries from each blog RSS/ATOM feed
 			feedEntries = []
+			#Temporarily store dictionary of link hashes (update searching) and plaintext links
+			links = {}
+			#Name of feed. Used to store said feed's dictionary items
+			feedTitle = self.genDictKey(fp.feed.link)
+			#Generate feedTitle's nested dictionary
+			self.feedDict[feedTitle] = {}
 			
 			for item in fp.entries:
-				#List: [hash of feed entry link, plaintext feed entry link]
-				feedEntries.append([self.encStrMD5(item.link), item.link])
+				#Dictionary of hashes of feed entry links, plaintext feed entry links
+				links[self.encStrMD5(item.link)] = item.link
 			#Dictionary of each feed source. key is base64 of feed hostname, and value is list of entries
-			self.feedDict[self.encStrB64(self.genDictKey(fp.feed.link))] = [self.encStrMD5(fp.modified), feedEntries]
+			self.feedDict[feedTitle]["modified"] = self.encStrMD5(fp.modified)
+			self.feedDict[feedTitle]["entries"] = links
 			#Delete before next iteration - prevent duplication
 			del(fp)
 			del(feedEntries)
@@ -121,17 +128,19 @@ class ParseFeeds:
 			print(msg)
 		else:
 			if (len(self.feedDict.keys())):
-				for key in self.feedDict.keys():
-					feedTitle = "Feed: " + self.decStrB64(key)
-					lastModified = "Last Modified hash: " + self.feedDict[key][0]
-					br = ""
-					for x in range(0,80):
-						br += "="					
-					print(feedTitle + "\n" + lastModified + "\n" + br)
-					for i,j in self.feedDict[key][1]:
-						linkHash = i
-						link = j
-						print("Link hash: " + linkHash + "\n  " + link)
+				for feed in self.feedDict.keys():
+					feedTitle = "Feed: " + feed
+					for key in self.feedDict[feed].keys():
+						if key == "modified":
+							lastModified = "Last Modified hash: " + self.feedDict[feed][key]
+							br = ""
+							for x in range(0,80):
+								br += "="					
+							print(feedTitle + "\n" + lastModified + "\n" + br)
+						else:
+							for lnkHash in self.feedDict[feed][key]:
+								link = self.feedDict[feed][key][lnkHash]
+								print("Link hash: " + lnkHash + "\n  " + link)
 			else:
 				msg = "Error: self.feedDict contains no entries"
 				print(msg)				
