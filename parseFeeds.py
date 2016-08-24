@@ -27,7 +27,7 @@ class ParseFeeds:
 		#Dictionary holding each feed and its associated entries (links)
 		self.feedDict = {}
 		#Create/load database
-		self.createDB()
+		self.db = self.createDB()
 		#Create list of feed URLs
 		self.getFeeds()
 
@@ -66,7 +66,7 @@ class ParseFeeds:
 			if not os.path.exists(self.dbURL):
 				msg = self.dbURL + " does not exist. Attempting to create."
 		finally:
-			db = TinyDB(self.dbURL, default_table='feeds')
+			return TinyDB(self.dbURL, default_table='feeds')
 #Returns the second item of split, after protocol, as directory name
 	def _buildOutDir(self, feedURL):
 		tmp = feedURL.split('.').pop(1).strip(' \n\r\t')
@@ -75,18 +75,18 @@ class ParseFeeds:
 	def _buildOutURL(self):
 		tmp = self.feedDstRootDir + self.outDir + "/" + self.outfile
 		return tmp.strip(' \n\r\t')
-#Return MD5 hash of an entire file in binary mode
+#Return MD5 hash string object of an entire file in binary mode
 	def encFileMD5(self,inFile):
- 		return hashlib.md5(open(inFile, mode='rb').read()).hexdigest()
-#Return MD5 hash of a string converted to utf-8, which returns a bytes object
+ 		return hashlib.md5(open(inFile, mode='rb').read()).hexdigest().decode('utf-8')
+#Return MD5 hash string object - must first convert to bytes
 	def encStrMD5(self,inStr):
 		return hashlib.md5(inStr.encode("utf-8")).hexdigest()
-#Return MD5 hash of a byyes object
+#Return MD5 hash string object
 	def encBytesMD5(self, bObj):
-		return hashlib.md5(bObj).hexdigest()
-#Return Base64 encoded bytes object from string
+		return hashlib.md5(bObj).hexdigest().decode('utf-8')
+#Return Base64 encoded string object - must first convert to bytes
 	def encStrB64(self, inStr):
-		return base64.b64encode(inStr.encode('utf-8'))
+		return base64.b64encode(inStr.encode('utf-8')).decode('utf-8')
 #Return decoded Base64 string object from bytes
 	def decStrB64(self, bObj):
 		return base64.b64decode(bObj).decode('utf-8')
@@ -105,7 +105,7 @@ class ParseFeeds:
 			
 			for item in fp.entries:
 				#List: [hash of feed entry link, plaintext feed entry link]
-				feedEntries.append([self.encStrMD5(item.link), item.link.encode('utf-8')])
+				feedEntries.append([self.encStrMD5(item.link), item.link])
 			#Dictionary of each feed source. key is base64 of feed hostname, and value is list of entries
 			self.feedDict[self.encStrB64(self.genDictKey(fp.feed.link))] = [self.encStrMD5(fp.modified), feedEntries]
 			#Delete before next iteration - prevent duplication
@@ -130,7 +130,7 @@ class ParseFeeds:
 					print(feedTitle + "\n" + lastModified + "\n" + br)
 					for i,j in self.feedDict[key][1]:
 						linkHash = i
-						link = j.decode('utf-8')
+						link = j
 						print("Link hash: " + linkHash + "\n  " + link)
 			else:
 				msg = "Error: self.feedDict contains no entries"
