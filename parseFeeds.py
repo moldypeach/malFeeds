@@ -80,7 +80,15 @@ class ParseFeeds:
 
 			#Name of feed. Used to store said feed's dictionary items
 			feedTitle = self.genDictKey(fp.feed.link)
-			self.db.insUPDATED_tbl({feedTitle:self.encStrMD5(fp.modified)})
+			#Hash of feed's last modified time
+			modHash = self.encStrMD5(fp.modified)
+			#Check if a feed's modified hash has changed, and update as necesssary
+			if self.db.chkUpdated(feedTitle, modHash):
+				msg = "Feed " + feedTitle + " hasn't been updated."
+				print(msg)
+				continue
+			else:
+				self.db.updUPDATED_tbl({"modHash":modhash}, feedTitle)
 			
 			for item in fp.entries:
 				#List of hashed feed entry links, plaintext feed entry links
@@ -89,7 +97,6 @@ class ParseFeeds:
 
 			#Delete before next iteration - prevent duplication
 			del(fp)
-
 
 #Print out the dictionary of feed entries
 	def printDict(self):

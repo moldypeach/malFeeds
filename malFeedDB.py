@@ -39,9 +39,13 @@ class Database:
 	def insENTRIES_tbl(self,value):
 		self.tbl_ENTRIES.insert(value)
 
+	#Update modified hash for a feed
+	def updUPDATED_tbl(self, fields, feedTitle):
+		self.tbl_UPDATED.update(feilds, q.feed == feedTitle)
+
 	#Return boolean of change to feed's last updated hash
 	def chkUpdated(self,feedTitle, modifiedHash):
-		return self.tbl_UPDATED.contains(q.feedTitle == modifiedHash)
+		return self.tbl_UPDATED.contains((q.feed == feedTitle)&(q.modHash == modifiedHash))
 	#Return boolean of urlHash's existence in tbl_ENTRIES
 	def chkUrlHash(self, urlHash):
 		return self.tbl_ENTRIES.contains(q.urlHash == urlHash)
@@ -54,3 +58,5 @@ class Database:
 	def getFeedTitleFromUrlHash(self, urlHash):
 		tmp = self.tbl_XREF.get(q.urlHash == urlHash)
 		return tmp["feed"]
+
+
