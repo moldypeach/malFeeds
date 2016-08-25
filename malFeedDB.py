@@ -39,10 +39,13 @@ class Database:
 	def insENTRIES_tbl(self,value):
 		self.tbl_ENTRIES.insert(value)
 
-	#Update modified hash for a feed
+	#Update modified hash for a feed - passed fields are updated where q.feed is a match
 	def updUPDATED_tbl(self, fields, feedTitle):
-		self.tbl_UPDATED.update(feilds, q.feed == feedTitle)
+		self.tbl_UPDATED.update(fields, q.feed == feedTitle)
 
+	#Check a feed exists in tbl_UPDATED
+	def chkExistsUpdated(self, feedTitle):
+		return self.tbl_UPDATED.contains(q.feed == feedTitle)
 	#Return boolean of change to feed's last updated hash
 	def chkUpdated(self,feedTitle, modifiedHash):
 		return self.tbl_UPDATED.contains((q.feed == feedTitle)&(q.modHash == modifiedHash))
@@ -58,5 +61,7 @@ class Database:
 	def getFeedTitleFromUrlHash(self, urlHash):
 		tmp = self.tbl_XREF.get(q.urlHash == urlHash)
 		return tmp["feed"]
-
-
+	#Return feed's last known etag or modified value
+	def getFeedLastMod(self, feedTitle):
+		tmp = self.tbl_UPDATED.get((q.feed == feedTitle)
+		return tmp

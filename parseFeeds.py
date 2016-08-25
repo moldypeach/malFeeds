@@ -73,31 +73,62 @@ class ParseFeeds:
 #Utilize feedparser to populate dictionary of entries from each URL in feeds/sources
 # ***Eventually a test should be conducted for Internet connectivity prior to running!***
 	def parseFeeds(self):
+		# boolean - test if element exists before getting value: e.g. 'title' in fp.feed
 		#Get, and iterate, through each feed URL from sources folder
 		for feed in self.blogFeed:
-			#Create Feed Parser object from source URL
-			fp = feedparser.parse(feed)
-
 			#Name of feed. Used to store said feed's dictionary items
-			feedTitle = self.genDictKey(fp.feed.link)
-			#Hash of feed's last modified time
-			modHash = self.encStrMD5(fp.modified)
-			#Check if a feed's modified hash has changed, and update as necesssary
-			if self.db.chkUpdated(feedTitle, modHash):
-				msg = "Feed " + feedTitle + " hasn't been updated."
+			feedTitle = self.genDictKey(feed)
+			#If feed already exists in table, then get last etag or modified
+			if self.db.chkExistsUpdated(feedTitle):
+				tmp = self.db.getFeedLastMod(feedTitle)
+				feedMod = ''
+				if tmp['etag'] != '':
+					eTag = tmp['etag']
+					fp = feedparser.parse(feed, etag=eTag)
+				else:
+					feedMod = tmp['modified']
+					fp = feedparser.parse(feed, modified=feedMod)
+				del(tmp)
+			#Create Feed Parser object from source URL
+
+			#Check if 
+			
+			#Test for required variables from feedparser - fp.entries[0] only tests there is at least one item
+			if fp.status == 200:
+				if not all ((('modified' in fp or 'etag' in fp), 'link' in fp.feed, 'status' in fp, 'link' in fp.entries[0] )):
+					msg = "ERROR: One or more required feed elements was missing"
+					print(msg)
+					continue
+				elif fp.status == 304:
+					msg = "Feed has not been modified since last check"
+					print(msg)
+					continue
+				else:
+					#Hash of feed's last modified time
+					modHash = self.encStrMD5(fp.modified)
+					#Check if a feed's modified hash has changed, and update as necesssary
+					if self.db.chkUpdated(feedTitle, modHash):
+						msg = "Feed " + feedTitle + " hasn't been updated."
+						print(msg)
+						continue
+					elif self.db.chkExistsUpdated(feedTitle):
+						self.db.insUPDATED_tbl({"feed":feedTitle, "etag":fp.etag, "modified":fp.modified})					
+					else:
+						self.db.updUPDATED_tbl({"etag":fp.etag}, feedTitle)
+						self.db.updUPDATED_tbl({"modified":fp.modified}, feedTitle)
+			
+					for item in fp.entries:
+						urlHash = self.encStrMD5(item.link)
+						#List of hashed feed entry links, plaintext feed entry links
+						self.db.insENTRIES_tbl({"urlHash":urlHash, "url":item.link})
+						self.db.insXREF_tbl({"urlHash":urlHash, "feed":feedTitle})
+
+					#Delete before next iteration - prevent duplication
+					del(fp)
+			else:
+				msg = "Feed download failed with HTTP status: " + fp.status
 				print(msg)
 				continue
-			else:
-				self.db.updUPDATED_tbl({"modHash":modhash}, feedTitle)
-			
-			for item in fp.entries:
-				#List of hashed feed entry links, plaintext feed entry links
-				self.db.insENTRIES_tbl({"urlHash":self.encStrMD5(item.link), "url":item.link})
-				self.db.insXREF_tbl({"urlHash":self.encStrMD5(item.link), "feed":feedTitle})
-
-			#Delete before next iteration - prevent duplication
-			del(fp)
-
 #Print out the dictionary of feed entries
 	def printDict(self):
 		try:
