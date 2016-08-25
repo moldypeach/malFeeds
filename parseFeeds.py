@@ -1,35 +1,23 @@
 import feedparser
-#from getFeeds import GetFeeds
-#import urllib3 #https://pypi.python.org/pypi/urllib3
 import shutil #https://docs.python.org/3/library/shutil.html
 import validators #https://pypi.python.org/pypi/validators
 import hashlib # For uniqueness comparisons
 import os, sys # For file system operations
 import base64
-from tinydb import TinyDB, Query #tinydb.readthedocs.io/en/latest/
+from malFeedDB import Database
 
 class ParseFeeds:
 	""" Parse feeds URLs from source folder"""
 
 	feedBaseDir = "./feeds/"
 	feedSrcDir = feedBaseDir + "sources/"
-	dbDir = "./feeds/db/"
-	dbFile = "malfeeds.json"
-	dbURL = dbDir + dbFile
-	#Create database object
-	#db = TinyDB(dbURL, default_table='feeds')
-	#Create database query object
-	query = Query()
 
 	def __init__(self):
 		#List of blog URLs
 		self.blogFeed = []
-		#Dictionary holding each feed and its associated entries (links)
-		self.feedDict = {}
-		#Create/load database
-		self.db = self.createDB()
 		#Create list of feed URLs
 		self.getFeeds()
+		self.db = Database()
 
 	def getFeeds(self):
 		for feed in os.listdir(self.feedSrcDir):
@@ -55,18 +43,7 @@ class ParseFeeds:
 			return True
 		else:
 			print("ERROR: invalid URL sntax:\n\t" + url)
-#Create the database object
-	def createDB(self):
-		try:
-			os.makedirs(self.dbDir, exist_ok=False)
-		except OSError:
-			msg = self.dbDir + " already exists."
-			print(msg)
-		else:
-			if not os.path.exists(self.dbURL):
-				msg = self.dbURL + " does not exist. Attempting to create."
-		finally:
-			return TinyDB(self.dbURL, default_table='feeds')
+
 #Returns the second item of split, after protocol, as directory name
 	def _buildOutDir(self, feedURL):
 		tmp = feedURL.split('.').pop(1).strip(' \n\r\t')
@@ -100,24 +77,19 @@ class ParseFeeds:
 		for feed in self.blogFeed:
 			#Create Feed Parser object from source URL
 			fp = feedparser.parse(feed)
-			#Temporarily store entries from each blog RSS/ATOM feed
-			feedEntries = []
-			#Temporarily store dictionary of link hashes (update searching) and plaintext links
-			links = {}
+
 			#Name of feed. Used to store said feed's dictionary items
 			feedTitle = self.genDictKey(fp.feed.link)
-			#Generate feedTitle's nested dictionary
-			self.feedDict[feedTitle] = {}
+			self.db.insUPDATED_tbl({feedTitle:self.encStrMD5(fp.modified)})
 			
 			for item in fp.entries:
-				#Dictionary of hashes of feed entry links, plaintext feed entry links
-				links[self.encStrMD5(item.link)] = item.link
-			#Dictionary of each feed source. key is base64 of feed hostname, and value is list of entries
-			self.feedDict[feedTitle]["modified"] = self.encStrMD5(fp.modified)
-			self.feedDict[feedTitle]["entries"] = links
+				#List of hashed feed entry links, plaintext feed entry links
+				self.db.insENTRIES_tbl({"urlHash":self.encStrMD5(item.link), "url":item.link})
+				self.db.insXREF_tbl({"urlHash":self.encStrMD5(item.link), "feed":feedTitle})
+
 			#Delete before next iteration - prevent duplication
 			del(fp)
-			del(feedEntries)
+
 
 #Print out the dictionary of feed entries
 	def printDict(self):
@@ -143,4 +115,5 @@ class ParseFeeds:
 								print("Link hash: " + lnkHash + "\n  " + link)
 			else:
 				msg = "Error: self.feedDict contains no entries"
-				print(msg)				
+				print(msg)
+
