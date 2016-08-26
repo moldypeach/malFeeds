@@ -20,6 +20,7 @@ class ParseFeeds:
 		self.db = Database()
 		#List of new feed entries for further processing
 		self.newURLs = []
+		self.parseFeeds()
 
 	def getFeeds(self):
 		for feed in os.listdir(self.feedSrcDir):
