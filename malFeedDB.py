@@ -41,27 +41,30 @@ class Database:
 
 	#Update modified hash for a feed - passed fields are updated where q.feed is a match
 	def updUPDATED_tbl(self, fields, feedTitle):
-		self.tbl_UPDATED.update(fields, q.feed == feedTitle)
+		self.tbl_UPDATED.update(fields, self.q.feed == feedTitle)
 
 	#Check a feed exists in tbl_UPDATED
 	def chkExistsUpdated(self, feedTitle):
-		return self.tbl_UPDATED.contains(q.feed == feedTitle)
+		return self.tbl_UPDATED.contains(self.q.feed == feedTitle)
+	#Check if a url (urlHash) already exists in tbl_ENTRIES
+	def chkExistsEntries(self, hashVal):
+		return self.tbl_ENTRIES.contains(self.q.urlHash == hashVal)
 	#Return boolean of change to feed's last updated hash
-	def chkUpdated(self,feedTitle, modifiedHash):
-		return self.tbl_UPDATED.contains((q.feed == feedTitle)&(q.modHash == modifiedHash))
+	#def chkUpdated(self,feedTitle, modifiedHash):
+	#	return self.tbl_UPDATED.contains((self.q.feed == feedTitle)&(q.modHash == modifiedHash))
 	#Return boolean of urlHash's existence in tbl_ENTRIES
-	def chkUrlHash(self, urlHash):
-		return self.tbl_ENTRIES.contains(q.urlHash == urlHash)
+	def chkUrlHash(self, hashVal):
+		return self.tbl_ENTRIES.contains(q.urlHash == hashVal)
 	#Return string of plaintext url from tbl_ENTRIES
-	def getUrlFromHash(self, urlHash):
+	def getUrlFromHash(self, hashVal):
 		#tmp = "None" if item not found - should test for this on return
-		tmp = self.tbl_ENTRIES.get(q.urlHash == urlHash)
+		tmp = self.tbl_ENTRIES.get(self.q.urlHash == hashVal)
 		return tmp["url"]
 	#Return feed title given urlHash
-	def getFeedTitleFromUrlHash(self, urlHash):
-		tmp = self.tbl_XREF.get(q.urlHash == urlHash)
+	def getFeedTitleFromUrlHash(self, hashVal):
+		tmp = self.tbl_XREF.get(self.q.urlHash == hashVal)
 		return tmp["feed"]
 	#Return feed's last known etag or modified value
 	def getFeedLastMod(self, feedTitle):
-		tmp = self.tbl_UPDATED.get((q.feed == feedTitle)
+		tmp = self.tbl_UPDATED.get((self.q.feed == feedTitle))
 		return tmp
