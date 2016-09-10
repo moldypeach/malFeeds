@@ -4,7 +4,11 @@ import validators #https://pypi.python.org/pypi/validators
 import hashlib # For uniqueness comparisons
 import os, sys # For file system operations
 import base64
-from malFeedDB import Database
+import urllib3  #parseIPs
+import re  #parseIPs
+from bs4 import BeautifulSoup  #parseIPs
+from malFeedDB import Database  #parseIPs
+from parseFeedsDB import ParseFeedsDB
 
 class ParseFeeds:
 	""" Parse feeds URLs from source folder"""
@@ -17,7 +21,9 @@ class ParseFeeds:
 		self.blogFeed = []
 		#Create list of feed URLs
 		self.getFeeds()
-		self.db = Database()
+		self.db = ParseFeedsDB()
+		#Create tables - cached table obj is not stored when already present
+		self.db.createTables(["tbl_XREF", "tbl_UPDATED", "tbl_ENTRIES", "tbl_MALIPS"])
 		#List of new feed entries for further processing
 		self.newURLs = []
 		self.parseFeeds()
@@ -82,8 +88,8 @@ class ParseFeeds:
 			#Name of feed. Used to store said feed's dictionary items
 			feedTitle = self.genDictKey(feed)
 			#Check if a feed already has db entry - block saves on bandwidth usage
-			if self.db.chkExistsUpdated(feedTitle):
-				tmp = self.db.getFeedLastMod(feedTitle)
+			if self.db.chkExists_tbl("tbl_UPDATED", "feed", feedTitle):
+				tmp = self.db.getFeedLastMod("tbl_UPDATED", "feed", feedTitle)
 				if tmp['etag'] != '':
 					eTag = tmp['etag'].replace("-gzip","") #replace resolves etag bug
 					fp = feedparser.parse(feed, etag=eTag)
@@ -105,26 +111,51 @@ class ParseFeeds:
 					print(msg)
 					continue
 				else:
-					if not self.db.chkExistsUpdated(feedTitle):
-						self.db.insUPDATED_tbl({"feed":feedTitle, "etag":fp.etag, "modified":fp.modified})					
+					if not self.db.chkExists_tbl("tbl_UPDATED", "feed", feedTitle):
+						self.db.insert_tbl("tbl_UPDATED", {"feed":feedTitle, "etag":fp.etag, "modified":fp.modified})					
 					else:
-						self.db.updUPDATED_tbl({"etag":fp.etag}, feedTitle)
-						self.db.updUPDATED_tbl({"modified":fp.modified}, feedTitle)
+						self.db.update_tbl("tbl_UPDATED", "feed", {"etag":fp.etag}, feedTitle)
+						self.db.update_tbl("tbl_UPDATED", "feed", {"modified":fp.modified}, feedTitle)
 			
 					for item in fp.entries:
 						urlHash = self.encStrMD5(item.link)
 						#If urlHash isn't already in database, it must be new
-						if not self.db.chkExistsEntries(urlHash):
-							self.newURLs.append({"url":item.link})
+						if not self.db.chkExists_tbl("tbl_ENTRIES", "urlHash", urlHash):
+							#self.newURLs.append({"url":item.link})
+							self.parseIPs(item.link, urlHash)
+							#self.db.insert_tbl("tbl_XREF", {"ip":, "date":,"info":, "urlHash":})
 						#List of hashed feed entry links, plaintext feed entry links
-						self.db.insENTRIES_tbl({"urlHash":urlHash, "url":item.link})
-						self.db.insXREF_tbl({"urlHash":urlHash, "feed":feedTitle})
+						self.db.insert_tbl("tbl_ENTRIES", {"urlHash":urlHash, "url":item.link})
+						self.db.insert_tbl("tbl_XREF", {"urlHash":urlHash, "feed":feedTitle})
 			else:
 				msg = "Feed download failed with HTTP status: " + fp.status
 				print(msg)
 				continue
 			#Delete before next iteration - prevent duplication
 			del(fp)
+
+#Parse feed URLs for malicious IPs and extraneous info
+	def parseIPs(self, urlIn, urlHash):
+		http = urllib3.PoolManager()
+		rx_ip = re.compile("(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(.*)")
+		rx_date = re.compile("(\/\d{4}\/\d{2}\/\d{2}\/)") 
+		req = http.request('GET', urlIn)
+
+		match = rx_date.search(urlIn)
+		date = match.group(0).strip('/') 
+
+		if req.status == 200:
+			soup = BeautifulSoup(req.data, 'html.parser')
+			listItems = soup.find_all("li")
+
+			for i in listItems:
+				text = i.get_text()
+				match = rx_ip.match(text)
+				if match:
+					ip = match.group(1).strip()
+					info = match.group(2).strip()
+					self.db.insert_tbl("tbl_MALIPS", {"ip": ip, "date": date,"info": info, "urlHash": urlHash})
+
 #Print out the dictionary of feed entries
 	def printDict(self):
 		try:
