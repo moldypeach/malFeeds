@@ -41,9 +41,13 @@ class Database:
 	def update_tbl(self,tableIn, keyIn, fields, matchVal):
 		self.db.table(tableIn).update(fields, self.q[keyIn] == matchVal)
 
-	#Search table for value(s)
+	#Search table for value (Match returns a list of elements)
 	def search_tbl(self, tableIn, keyIn, matchVal):
 		return self.db.table(tableIn).search(self.q[keyIn] == matchVal)
+
+	#Search table for value by regex (Match returns a list of elements)
+	def rxSearch_tbl(self, tableIn, keyIn, matchVal):
+		return self.db.table(tableIn).search(self.q[keyIn].search(matchVal))
 
 	#Check if a value exists in table (returns boolean)
 	def chkExists_tbl(self, tableIn, keyIn, matchVal):

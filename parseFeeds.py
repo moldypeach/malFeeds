@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.4
 import feedparser
 import shutil #https://docs.python.org/3/library/shutil.html
 import validators #https://pypi.python.org/pypi/validators
@@ -8,6 +9,7 @@ import urllib3  #parseIPs
 import re  #parseIPs
 from bs4 import BeautifulSoup  #parseIPs
 from malFeedDB import Database  #parseIPs
+import datetime
 from parseFeedsDB import ParseFeedsDB
 
 class ParseFeeds:
@@ -25,8 +27,8 @@ class ParseFeeds:
 		#Create tables - cached table obj is not stored when already present
 		self.db.createTables(["tbl_XREF", "tbl_UPDATED", "tbl_ENTRIES", "tbl_MALIPS"])
 		#List of new feed entries for further processing
-		self.newURLs = []
 		self.parseFeeds()
+		self.createMessage()
 
 	def getFeeds(self):
 		for feed in os.listdir(self.feedSrcDir):
@@ -121,9 +123,7 @@ class ParseFeeds:
 						urlHash = self.encStrMD5(item.link)
 						#If urlHash isn't already in database, it must be new
 						if not self.db.chkExists_tbl("tbl_ENTRIES", "urlHash", urlHash):
-							#self.newURLs.append({"url":item.link})
 							self.parseIPs(item.link, urlHash)
-							#self.db.insert_tbl("tbl_XREF", {"ip":, "date":,"info":, "urlHash":})
 						#List of hashed feed entry links, plaintext feed entry links
 						self.db.insert_tbl("tbl_ENTRIES", {"urlHash":urlHash, "url":item.link})
 						self.db.insert_tbl("tbl_XREF", {"urlHash":urlHash, "feed":feedTitle})
@@ -154,31 +154,101 @@ class ParseFeeds:
 				if match:
 					ip = match.group(1).strip()
 					info = match.group(2).strip()
+					#TODO: sanatize malicious URLs on insert, e.g. replace *.com with *[.]com
 					self.db.insert_tbl("tbl_MALIPS", {"ip": ip, "date": date,"info": info, "urlHash": urlHash})
 
-#Print out the dictionary of feed entries
-	def printDict(self):
-		try:
-			self.feedDict
-		except NameError:
-			msg = "self.feedDict is not defined"
-			print(msg)
-		else:
-			if (len(self.feedDict.keys())):
-				for feed in self.feedDict.keys():
-					feedTitle = "Feed: " + feed
-					for key in self.feedDict[feed].keys():
-						if key == "modified":
-							lastModified = "Last Modified hash: " + self.feedDict[feed][key]
-							br = ""
-							for x in range(0,80):
-								br += "="					
-							print(feedTitle + "\n" + lastModified + "\n" + br)
-						else:
-							for lnkHash in self.feedDict[feed][key]:
-								link = self.feedDict[feed][key][lnkHash]
-								print("Link hash: " + lnkHash + "\n  " + link)
-			else:
-				msg = "Error: self.feedDict contains no entries"
-				print(msg)
+#Format new entry messagee
+	def createMessage(self):
+		#TODO: Don't need currDate for final version as new blog entries will possess the currDate already
+		#For testing, however, this allows the retrieval of data from a reference  point
+		#TODO: This method should be only be called when new entires are present
+		currDate = datetime.date.today()
+		ipDates = []
+		ipDates.append(str(currDate).replace('-','/'))
+		br = ""
+		for n in range(1,81):
+			br += "*"
+		#For getting IPs for three days prior to today
+		for day in range(4):
+			tmpDate = datetime.timedelta(days=day)
+			ipDates.append((str(currDate - tmpDate).replace('-','/')))
 
+		msgIPs = ""
+		msgEntries = ""
+		msgSubIPs = ""
+		ipSet = set()
+		refURLs = set()
+		subIPSet = set()
+		subIPRefsSet = set()
+		for date in ipDates:
+			result = self.db.search_tbl('tbl_MALIPS', 'date', date)
+			#Ignore any empty result list
+			if result:
+				for element in result:
+					ip = element["ip"]
+					info = element["info"]
+					ipSet.add(ip)
+					#Associates IPs with blog info for analyst consumption (some ips repeat because different info was analyzed)
+					msgEntries += ip + " " + info + "\n"
+					refURLs.add(element["urlHash"])
+		#msgIPs are duplicated for ease of pasting into summary db search
+		for ip in ipSet:
+			msgIPs += ip + "\n"
+		#See if db contains any other ips in same /24
+		#slash24Dict = self.db.getSlash24IPs(ipSet)
+		#TODO: consider revising to list all refURLs per each IP
+		# if tmpIPSet and tmpIPRefs:
+		# 	for ip in tmpIPSet:
+		# 		subIPSet.add(ip)
+		# 	for refURL in tmpIPRefs:
+		# 		subIPRefsSet.add(refURL)
+		# if subIPSet and subIPRefsSet:
+		# 	for ip in subIPSet:
+		# 		#msgSubIPs += ip + "\n"
+		# 		tmpList.append(ip)
+		# 	for refURL in subIPRefsSet:
+		# 		msgSubIPs += refURL + "\n"
+		# else:
+		# 	msgSubIPs = "No IPs detected in the same /24 within current date range"
+
+		#Append unique list referennce URLs for asssoicated IPs above
+		for urlHash in refURLs:
+			msgEntries += self.db.getUrlFromHash("tbl_ENTRIES", "urlHash", urlHash) + "\n"
+
+		outMsg = (
+			"EK traffic IPs over the last three days" + "\n" + 
+			br + "\n" +  
+			br + "\n" + 
+			msgIPs + "\n" + 
+			"EK traffic IPs (with info) from blog entries" + "\n" + 
+			br + "\n" + 
+			br + "\n" + 
+			msgEntries + "\n" + 
+			"EK traffic IPs occuring on same /24" + "\n" + 
+			br + "\n" + 
+			br + "\n" + 
+			msgSubIPs)
+		#print(msgSubIPs)
+		print(outMsg)
+
+
+		# 	msgIPs += ip + "\n"
+		# 	#See if db contains any other ips in same /24
+		# 	(tmpIPSet, tmpIPRefs) = self.db.getSlash24IPs(ip)
+		# 	#TODO: consider revising to list all refURLs per each IP
+		# 	if tmpIPSet and tmpIPRefs:
+		# 		for ip in tmpIPSet:
+		# 			subIPSet.add(ip)
+		# 		for refURL in tmpIPRefs:
+		# 			subIPRefsSet.add(refURL)
+		# tmpList = []
+		# if subIPSet and subIPRefsSet:
+		# 	for ip in subIPSet:
+		# 		#msgSubIPs += ip + "\n"
+		# 		tmpList.append(ip)
+		# 	for refURL in subIPRefsSet:
+		# 		msgSubIPs += refURL + "\n"
+		# else:
+		# 	msgSubIPs = "No IPs detected in the same /24 within current date range"
+		# for ip in tmpList:
+		# 	print(ip)
