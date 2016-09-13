@@ -5,6 +5,9 @@ import validators #https://pypi.python.org/pypi/validators
 import hashlib # For uniqueness comparisons
 import os, sys # For file system operations
 import base64
+import socket
+import smtplib
+from email.mime.text import MIMEText
 import urllib3  #parseIPs
 import re  #parseIPs
 from bs4 import BeautifulSoup  #parseIPs
@@ -189,66 +192,41 @@ class ParseFeeds:
 					info = element["info"]
 					ipSet.add(ip)
 					#Associates IPs with blog info for analyst consumption (some ips repeat because different info was analyzed)
-					msgEntries += ip + " " + info + "\n"
+					msgEntries += ip + " " + info + "\r\n"
 					refURLs.add(element["urlHash"])
 		#msgIPs are duplicated for ease of pasting into summary db search
 		for ip in ipSet:
-			msgIPs += ip + "\n"
+			msgIPs += ip + "\r\n"
 		#See if db contains any other ips in same /24
-		#slash24Dict = self.db.getSlash24IPs(ipSet)
-		#TODO: consider revising to list all refURLs per each IP
-		# if tmpIPSet and tmpIPRefs:
-		# 	for ip in tmpIPSet:
-		# 		subIPSet.add(ip)
-		# 	for refURL in tmpIPRefs:
-		# 		subIPRefsSet.add(refURL)
-		# if subIPSet and subIPRefsSet:
-		# 	for ip in subIPSet:
-		# 		#msgSubIPs += ip + "\n"
-		# 		tmpList.append(ip)
-		# 	for refURL in subIPRefsSet:
-		# 		msgSubIPs += refURL + "\n"
-		# else:
-		# 	msgSubIPs = "No IPs detected in the same /24 within current date range"
+		#TODO: Because of the way I stored unique IPs I am presently not capturing all of the ref-
+		#erence URLs associated with each IP, but rather just one of them. This should be addressed!
+		slash24Dict = self.db.getSlash24IPs(ipSet)
+
+		if slash24Dict:
+			for element in sorted(slash24Dict.items(), key=lambda ipKey: socket.inet_aton(ipKey[0])):
+				ip = element[0]
+				url = element[1]["url"]
+				msgSubIPs += (
+					ip + "\r\n" + 
+					"\t" + url + "\r\n")
+		else:
+			msgSubIPs = "No IPs detected in the same /24 within current date range"
 
 		#Append unique list referennce URLs for asssoicated IPs above
 		for urlHash in refURLs:
-			msgEntries += self.db.getUrlFromHash("tbl_ENTRIES", "urlHash", urlHash) + "\n"
+			msgEntries += self.db.getUrlFromHash("tbl_ENTRIES", "urlHash", urlHash) + "\r\n"
 
 		outMsg = (
-			"EK traffic IPs over the last three days" + "\n" + 
-			br + "\n" +  
-			br + "\n" + 
-			msgIPs + "\n" + 
-			"EK traffic IPs (with info) from blog entries" + "\n" + 
-			br + "\n" + 
-			br + "\n" + 
-			msgEntries + "\n" + 
-			"EK traffic IPs occuring on same /24" + "\n" + 
-			br + "\n" + 
-			br + "\n" + 
+			"EK traffic IPs over the last three days" + "\r\n" + 
+			br + "\r\n" +  
+			br + "\r\n" + 
+			msgIPs + "\r\n" + 
+			"EK traffic IPs (with info) from blog entries" + "\r\n" + 
+			br + "\r\n" + 
+			br + "\r\n" + 
+			msgEntries + "\r\n" + 
+			"EK traffic IPs occuring on same /24" + "\r\n" + 
+			br + "\r\n" + 
+			br + "\r\n" + 
 			msgSubIPs)
-		#print(msgSubIPs)
-		print(outMsg)
-
-
-		# 	msgIPs += ip + "\n"
-		# 	#See if db contains any other ips in same /24
-		# 	(tmpIPSet, tmpIPRefs) = self.db.getSlash24IPs(ip)
-		# 	#TODO: consider revising to list all refURLs per each IP
-		# 	if tmpIPSet and tmpIPRefs:
-		# 		for ip in tmpIPSet:
-		# 			subIPSet.add(ip)
-		# 		for refURL in tmpIPRefs:
-		# 			subIPRefsSet.add(refURL)
-		# tmpList = []
-		# if subIPSet and subIPRefsSet:
-		# 	for ip in subIPSet:
-		# 		#msgSubIPs += ip + "\n"
-		# 		tmpList.append(ip)
-		# 	for refURL in subIPRefsSet:
-		# 		msgSubIPs += refURL + "\n"
-		# else:
-		# 	msgSubIPs = "No IPs detected in the same /24 within current date range"
-		# for ip in tmpList:
-		# 	print(ip)
+		self.sendEmail(outMsg)
