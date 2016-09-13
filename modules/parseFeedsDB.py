@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.4
 from tinydb import TinyDB, Query #tinydb.readthedocs.io/en/latest/
 from modules.malFeedDB import Database
 

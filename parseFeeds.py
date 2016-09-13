@@ -237,4 +237,7 @@ class ParseFeeds:
 		with open(emailFile, 'w') as f:
 			f.write(outMsg)
 			f.close()
+			
 		#self.sendEmail(outMsg)
+
+

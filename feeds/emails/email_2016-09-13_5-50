@@ -1,0 +1,88 @@
+EK traffic IPs over the last three days
+********************************************************************************
+********************************************************************************
+108.61.99.79
+198.23.59.178
+62.149.144.61
+174.142.55.229
+31.184.193.168
+95.47.161.41
+5.39.4.3
+93.171.202.162
+66.147.244.75
+23.95.106.223
+103.208.86.154
+185.117.73.160
+137.74.223.62
+202.40.164.200
+185.22.65.47
+46.165.246.9
+192.185.41.190
+213.142.143.183
+51.255.105.2
+43.225.54.151
+74.81.90.93
+137.74.223.60
+66.85.27.179
+74.208.193.214
+185.117.73.16
+
+EK traffic IPs (with info) from blog entries
+********************************************************************************
+********************************************************************************
+31.184.193.168 – mottainaihonpo.top – EITEST REDIRECT GATE
+185.117.73.16 – qjru0zdbia.top – RIG EK LANDING PAGE
+93.171.202.162 – GET /module/ – Vawtrak POST INFECTION TRAFFIC
+185.22.65.47 – jcdurmfsx.ru – Vawtrak POST INFECTION TRAFFIC
+95.47.161.41 – hzvmnpug.ru – Vawtrak POST INFECTION TRAFFIC
+5.39.4.3 – supininguneuwied.shiaduas.org – Neutrino EK LANDING PAGE
+46.165.246.9 – Port 443 – Clear Text – CnC Check-In POST INFECTION TRAFFIC
+31.184.193.168 port 80 - copyrightfrance.top - EITest gate
+185.117.73.160 port 80 - k0sg2nkf.top - Rig EK
+108.61.99.79 port 80 - 108.61.99.79 - Post-infection traffic caused by Vawtrak
+192.185.41.190 port 80 - wamasoftware.com - GET /8fh34f3?IUiqidnymtA=zitRTbI   -   Request for Locky downloader caused .wsf file
+43.225.54.151 port 80 - mysoregiftsflowers.com - GET /8fh34f3?IUiqidnymtA=zitRTbI   -   Request for Locky downloader caused .wsf file
+62.149.144.61 port 80 - www.villakeratea.it - GET /8fh34f3?IUiqidnymtA=zitRTbI   -   Request for Locky downloader caused .wsf file
+103.208.86.154 port 80 - supperuploadtestspeed.ws - POST /p/3d23fd.php HTTP/1.0   -   Post-infection callback by Locky downloader
+66.85.27.179 port 80 - supperuploadtestspeed.ws - POST /p/3d23fd.php HTTP/1.0   -   Post-infection callback by Locky downloader
+213.142.143.183 port 80 - yesiloglugrup.com - GET /7g6bubt7v?IUiqidnymtA=zitRTbI   -   Request for Locky caused by Locky downloader
+202.40.164.200 port 80 - sowhatresearch.com.au - GET /7g6bubt7v?IUiqidnymtA=zitRTbI   -   Request for Locky caused by Locky downloader
+66.85.27.179 port 80 - supperuploadtestspeed.ws - GET /7g6bubt7v?IUiqidnymtA=zitRTbI   -   Request for Locky caused by Locky downloader
+43.225.54.151 port 80 - gift2belgaum.com - GET /8fh34f3?fUrVOQVnKi=ViUtFTEEpm   -   Request for Locky downloader caused .wsf file
+198.23.59.178 port 80 - nysekolintsika.mg - GET /8fh34f3?fUrVOQVnKi=ViUtFTEEpm   -   Request for Locky downloader caused .wsf file
+74.81.90.93 port 80 - abcdraw.biz - GET /8fh34f3?fUrVOQVnKi=ViUtFTEEpm   -   Request for Locky downloader caused .wsf file
+103.208.86.154 port 80 - supperuploadtestspeed.ws - POST /p/3d23fd.php HTTP/1.0   -   Post-infection callback by Locky downloader
+66.85.27.179 port 80 - supperuploadtestspeed.ws - POST /p/3d23fd.php HTTP/1.0   -   Post-infection callback by Locky downloader
+174.142.55.229 port 80 - www.alfajerdecor.com - GET /7g6bubt7v?fUrVOQVnKi=ViUtFTEEpm   -   Request for Locky caused by Locky downloader
+66.147.244.75 port 80 - www.pstimes.com - GET /7g6bubt7v?fUrVOQVnKi=ViUtFTEEpm   -   Request for Locky caused by Locky downloader
+66.85.27.179 port 80 - supperuploadtestspeed.ws - GET /7g6bubt7v?fUrVOQVnKi=ViUtFTEEpm   -   Request for Locky caused by Locky downloader
+23.95.106.223 port 80 - trybttr.ws - GET /h71qizc   -   Request for Locky caused by .js file
+51.255.105.2 port 80 - 51.255.105.2 - POST /data/info.php   -   Post-infection callback by the Locky ransomware
+74.208.193.214 port 80 - tuberkle.orlandothemeparkexperts.com - Neutrino EK (first infection)
+74.208.193.214 port 80 - aivotoimintoja.scaffoldsignage.com - Neutrino EK (second infection)
+46.165.246.9 port 443 - post-infection CrypMIC callback, custom encoded and clear text, not HTTPS/SSL/TLS (both infections)
+137.74.223.62 – free.diendancacanh.net – Neutrino EK LANDING PAGE
+46.165.246.9 – Port 443 – Clear Text – CnC Check-In POST INFECTION TRAFFIC
+137.74.223.60 port 80 - residertwithcallback.scrubs101webstore.info - Neutrino EK
+46.165.246.9 port 443 - post-infection CrypMIC callback, custom encoded and clear text, not HTTPS/SSL/TLS
+http://www.broadanalysis.com/2016/09/12/rig-ek-via-eitest-from-31-184-193-168-delivers-vawtrak/
+http://www.broadanalysis.com/2016/09/12/neutrino-exploit-kit-via-pseudodarkleech-delivers-crypmic-ransomware-8/
+http://www.malware-traffic-analysis.net/2016/09/12/index2.html
+http://www.malware-traffic-analysis.net/2016/09/12/index.html
+http://www.malware-traffic-analysis.net/2016/09/11/index.html
+http://www.malware-traffic-analysis.net/2016/09/12/index3.html
+http://www.broadanalysis.com/2016/09/11/neutrino-ek-via-pseudodarkleech-from-137-74-223-62-delivers-crypmic-ransomware/
+
+EK traffic IPs occuring on same /24
+********************************************************************************
+********************************************************************************
+137.74.223.60
+	http://www.malware-traffic-analysis.net/2016/09/11/index.html
+137.74.223.62
+	http://www.broadanalysis.com/2016/09/11/neutrino-ek-via-pseudodarkleech-from-137-74-223-62-delivers-crypmic-ransomware/
+185.117.73.16
+	http://www.broadanalysis.com/2016/09/12/rig-ek-via-eitest-from-31-184-193-168-delivers-vawtrak/
+185.117.73.140
+	http://www.malware-traffic-analysis.net/2016/09/08/index2.html
+185.117.73.160
+	http://www.malware-traffic-analysis.net/2016/09/12/index2.html
