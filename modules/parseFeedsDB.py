@@ -1,5 +1,5 @@
 from tinydb import TinyDB, Query #tinydb.readthedocs.io/en/latest/
-from malFeedDB import Database
+from modules.malFeedDB import Database
 
 class ParseFeedsDB(Database):
 	""" Represents tinyDB object specific to parseFeeds object """

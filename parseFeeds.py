@@ -10,10 +10,11 @@ import smtplib
 from email.mime.text import MIMEText
 import urllib3  #parseIPs
 import re  #parseIPs
-from bs4 import BeautifulSoup  #parseIPs
-from malFeedDB import Database  #parseIPs
 import datetime
-from parseFeedsDB import ParseFeedsDB
+from bs4 import BeautifulSoup  #parseIPs
+from modules.malFeedDB import Database  #parseIPs
+from modules.parseFeedsDB import ParseFeedsDB
+
 
 class ParseFeeds:
 	""" Parse feeds URLs from source folder"""
@@ -229,4 +230,11 @@ class ParseFeeds:
 			br + "\r\n" + 
 			br + "\r\n" + 
 			msgSubIPs)
-		self.sendEmail(outMsg)
+
+		emailFile = (
+			"feeds/emails/email_" + str(datetime.date.today()) + "_" + str(datetime.datetime.now().hour) + "-" + 
+			str(datetime.datetime.now().minute))
+		with open(emailFile, 'w') as f:
+			f.write(outMsg)
+			f.close()
+		#self.sendEmail(outMsg)
