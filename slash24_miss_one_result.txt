@@ -1,0 +1,13 @@
+for element in tmp:
+...   element
+...   print("++++++++++++++++++++++++++++++++++++++++++++++++++++")
+...   for subElement in tmp:
+...     subElement
+...   print("++++++++++++++++++++++++++++++++++++++++++++++++++++")
+...   print("++++++++++++++++++++++++++++++++++++++++++++++++++++")
+...
+{'info': 'port 80 - 51.255.105.2 - POST /data/info.php \xa0 - \xa0 Post-infection callback by the Locky ransomware', 'urlHash': 'f6f944b4cdb6518ef68bdba5e8f0e748', 'date': '2016/09/12', 'ip': '51.255.105.2'}
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+{'info': 'port 80 - 51.255.105.2 - POST /data/info.php \xa0 - \xa0 Post-infection callback by the Locky ransomware', 'urlHash': 'f6f944b4cdb6518ef68bdba5e8f0e748', 'date': '2016/09/12', 'ip': '51.255.105.2'}
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++

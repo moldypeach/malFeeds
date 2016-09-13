@@ -51,26 +51,3 @@ class ParseFeedsDB(Database):
 				hashURL = result[0]["url"]
 				urlHash["url"] = hashURL
 		return slash24Dict
-
-	# #Return set of unique ips matching regex on /24 along with ref urls
-	# def getSlash24IPs(self,matchVal):
-	# 	ipSet = set()
-	# 	hashSet = set()
-	# 	urlList = []
-	# 	#strips .\d* from given ip string and returns the first three octets
-	# 	slash24 = matchVal.rsplit('.', maxsplit=1)[0] + "."
-	# 	tmp = self.rxSearch_tbl("tbl_MALIPS", "ip", slash24)
-	# 	if tmp:
-	# 		for element in tmp:
-	# 			currIP = element["ip"]
-	# 			#print("for element in tmp\n")
-	# 			#print("\tcurrIP: " + currIP + " matchVal: " + matchVal + "\n")
-	# 			if matchVal != currIP:
-	# 				ipSet.add(currIP)
-	# 				ipSet.add(matchVal)
-	# 				hashSet.add(element["urlHash"])
-	# 		if hashSet:
-	# 			for urlHash in hashSet:
-	# 				result = self.search_tbl("tbl_ENTRIES", "urlHash", urlHash)
-	# 				urlList.append(result[0]["url"])
-	# 	return (ipSet, urlList)
