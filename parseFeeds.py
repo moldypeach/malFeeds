@@ -1,17 +1,18 @@
 #!/usr/bin/env python3.4
+#External pkg dependencies
 import feedparser
-import shutil #https://docs.python.org/3/library/shutil.html
 import validators #https://pypi.python.org/pypi/validators
+import urllib3  #parseIPs
+from bs4 import BeautifulSoup  #parseIPs from <li>'s'
+
 import hashlib # For uniqueness comparisons
 import os, sys # For file system operations
 import base64
 import socket
 import smtplib
 from email.mime.text import MIMEText
-import urllib3  #parseIPs
-import re  #parseIPs
+import re  #parseIPs()
 import datetime
-from bs4 import BeautifulSoup  #parseIPs
 from modules.malFeedDB import Database  #parseIPs
 from modules.parseFeedsDB import ParseFeedsDB
 
@@ -181,7 +182,7 @@ class ParseFeeds:
 		br = ""
 		for n in range(1,81):
 			br += "*"
-		#For getting IPs for three days prior to today
+		#For getting IPs for three days prior to today. Adjust range accordingly for longer/shorter span
 		for day in range(4):
 			tmpDate = datetime.timedelta(days=day)
 			ipDates.append((str(currDate - tmpDate).replace('-','/')))
@@ -208,14 +209,12 @@ class ParseFeeds:
 		for ip in ipSet:
 			msgIPs += ip + "\r\n"
 		#See if db contains any other ips in same /24
-		#TODO: Because of the way I stored unique IPs I am presently not capturing all of the ref-
-		#erence URLs associated with each IP, but rather just one of them. This should be addressed!
 		slash24Dict = self.db.getSlash24IPs(ipSet)
 
 		if slash24Dict:
-			url = ""
 			for element in sorted(slash24Dict.items(), key=lambda ipKey: socket.inet_aton(ipKey[0])):
 				ip = element[0]
+				url = ""
 				for currURL in element[1]:
 					url += "\t" + currURL + "\r\n"
 				msgSubIPs += (
@@ -243,7 +242,7 @@ class ParseFeeds:
 			msgSubIPs)
 
 		emailFile = (
-			"feeds/emails/email_" + str(datetime.date.today()) + "_" + str(datetime.datetime.now().hour) + "-" + 
+			"feeds/emails/email_" + str(datetime.date.today()) + "_ h" + str(datetime.datetime.now().hour) + "- m" + 
 			str(datetime.datetime.now().minute))
 		with open(emailFile, 'w') as f:
 			f.write(outMsg)
@@ -251,4 +250,3 @@ class ParseFeeds:
 		print(outMsg)
 			
 		#self.sendEmail(outMsg)
-
