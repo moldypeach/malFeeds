@@ -29,7 +29,7 @@ class ParseFeeds:
 		self.getFeeds()
 		self.db = ParseFeedsDB()
 		#Create tables - cached table obj is not stored when already present
-		self.db.createTables(["tbl_XREF", "tbl_UPDATED", "tbl_ENTRIES", "tbl_MALIPS"])
+		self.db.createTables(["tbl_IPREF", "tbl_UPDATED", "tbl_ENTRIES", "tbl_MALIPS"])
 		#List of new feed entries for further processing
 		self.parseFeeds()
 		self.createMessage()
@@ -129,8 +129,7 @@ class ParseFeeds:
 						if not self.db.chkExists_tbl("tbl_ENTRIES", "urlHash", urlHash):
 							self.parseIPs(item.link, urlHash)
 						#List of hashed feed entry links, plaintext feed entry links
-						self.db.insert_tbl("tbl_ENTRIES", {"urlHash":urlHash, "url":item.link})
-						self.db.insert_tbl("tbl_XREF", {"urlHash":urlHash, "feed":feedTitle})
+						self.db.insert_tbl("tbl_ENTRIES", {"urlHash":urlHash, "url":item.link, "feed":feedTitle})
 			else:
 				msg = "Feed download failed with HTTP status: " + fp.status
 				print(msg)
@@ -159,7 +158,17 @@ class ParseFeeds:
 					ip = match.group(1).strip()
 					info = match.group(2).strip()
 					#TODO: sanatize malicious URLs on insert, e.g. replace *.com with *[.]com
-					self.db.insert_tbl("tbl_MALIPS", {"ip": ip, "date": date,"info": info, "urlHash": urlHash})
+					self.db.insert_tbl("tbl_MALIPS", {"ip": ip, "date": date,"info": info.replace('\u2012', '-'), "urlHash": urlHash})
+					#If IP is already known, associate new reference URLs to it as necessary
+					ipRef = self.db.getItem_tbl('tbl_IPREF', 'ip', ip)
+					if not ipRef:
+						refList = [urlIn]
+						self.db.insert_tbl('tbl_IPREF', {"ip":ip, "refs":refList})
+					else:
+						if urlIn not in ipRef["refs"]:
+							ipRef["refs"].append(urlIn)
+							self.db.update_tbl("tbl_IPREF", "ip", {"refs":ipRef["refs"]}, ip)
+
 
 #Format new entry messagee
 	def createMessage(self):
@@ -204,12 +213,14 @@ class ParseFeeds:
 		slash24Dict = self.db.getSlash24IPs(ipSet)
 
 		if slash24Dict:
+			url = ""
 			for element in sorted(slash24Dict.items(), key=lambda ipKey: socket.inet_aton(ipKey[0])):
 				ip = element[0]
-				url = element[1]["url"]
+				for currURL in element[1]:
+					url += "\t" + currURL + "\r\n"
 				msgSubIPs += (
 					ip + "\r\n" + 
-					"\t" + url + "\r\n")
+					url + "\r\n")
 		else:
 			msgSubIPs = "No IPs detected in the same /24 within current date range"
 

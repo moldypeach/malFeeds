@@ -46,6 +46,10 @@ class Database:
 	def search_tbl(self, tableIn, keyIn, matchVal):
 		return self.db.table(tableIn).search(self.q[keyIn] == matchVal)
 
+	#Get a single matched element from table, or return empty set
+	def getItem_tbl(self, tableIn, keyIn, matchVal):
+		return self.db.table(tableIn).get(self.q[keyIn] == matchVal)
+
 	#Search table for value by regex (Match returns a list of elements)
 	def rxSearch_tbl(self, tableIn, keyIn, matchVal):
 		return self.db.table(tableIn).search(self.q[keyIn].search(matchVal))
