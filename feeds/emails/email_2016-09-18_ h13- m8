@@ -1,0 +1,84 @@
+EK traffic IPs over the last three days
+********************************************************************************
+********************************************************************************
+148.251.222.143
+185.117.73.175
+178.62.23.109
+65.49.8.96
+74.208.154.148
+185.117.73.195
+74.208.205.36
+185.117.73.174
+185.118.67.195
+74.208.193.71
+185.75.46.29
+51.255.105.2
+37.54.178.97
+50.21.187.15
+31.184.192.188
+137.74.148.232
+185.117.73.192
+74.208.192.79
+176.8.221.121
+31.184.234.117
+198.105.254.228
+213.251.184.66
+83.217.27.178
+46.30.46.97
+
+EK traffic IPs (with info) from blog entries
+********************************************************************************
+********************************************************************************
+http://www.malware-traffic-analysis.net/2016/09/15/index.html
+	31.184.192.188 port 80 - kikuxxx.top - EITest gate	185.117.73.174 port 80 - nvfd0.iuuo764.top - Rig EK	31.184.234.117 port 80 - siri5.ml - Post-infection traffic, possible Tilon/SpyEye2 activity	31.184.192.188 port 80 - allaboutbelgaum.top - EITest gate	185.117.73.175 port 80 - aqir4.hmh9ow4.top - Rig EK	185.118.67.195 port 80 - 185.118.67.195 - Post-infection traffic, possible Miuref/Boaxxe activityhttp://www.malware-traffic-analysis.net/2016/09/16/index.html
+	74.208.154.148 port 80 - patriodescrissgenpin.spindletap.com - Rig EK (2016-09-15 first example)	74.208.192.79 port 80 - miseksisyrjityksi.rapidcratesolutions.info - Rig EK (2016-09-15 second example)	50.21.187.15 port 80 - zygostyle.runningfitnesscouples.com - Rig EK (2016-09-16 first example)	50.21.187.15 port 80 - devaan.runningfitnesscouples.com - Rig EK (2016-09-16 second example)	65.49.8.96 port 443 - post-infection CrypMIC callback, custom encoded and clear text, not HTTPS/SSL/TLS (both infections)http://www.malware-traffic-analysis.net/2016/09/16/index2.html
+	31.184.192.188 port 80 - marketingwithyou.top - EITest gate	185.117.73.192 port 80 - m1d6.gn3ydtrin.top - Rig EK	176.8.221.121 port 80 - tortonrcommt.pw - POST /comm/asm.php   [post-infection traffic]	37.54.178.97 port 80 - tortonrcommt.pw - POST /comm/asm.php   [post-infection traffic]	31.184.192.188 port 80 - uli87.top - EITest gate	46.30.46.97 port 80 - ser.madisonreserve.com - Rig EK	213.251.184.66 port 80 - 213.251.184.66 - GET /headers.jpg   [post-infection traffic]	213.251.184.66 port 80 - 213.251.184.66 - POST /upd/ddd2.php   [post-infection traffic]http://www.broadanalysis.com/2016/09/15/rig-exploit-kit-via-eitest-gate-31-184-192-188-delivers-gootkit-banking-malware/
+	31.184.192.188 – bz-party.top – EITEST GATE	185.117.73.174 – k48v.hdep1wfa.top – RIG EK LANDING PAGE	148.251.222.143 – sarlncha.com Port 80 and 443 –POST INFECTION TRAFFIC	198.105.254.228 – obrenese.com –POST INFECTION TRAFFIC [404 ERROR]	198.105.254.228 – shubaaka.com –POST INFECTION TRAFFIC [404 ERROR]	198.105.254.228 – marenule.com –POST INFECTION TRAFFIC [404 ERROR]	198.105.254.228 – chupasab.com –POST INFECTION TRAFFIC [404 ERROR]	198.105.254.228 – galaxans.com –POST INFECTION TRAFFIC [404 ERROR]	198.105.254.228 – purquewe.com –POST INFECTION TRAFFIC [404 ERROR]	198.105.254.228 – quporost.com –POST INFECTION TRAFFIC [404 ERROR]	198.105.254.228 – piploeno.com –POST INFECTION TRAFFIC [404 ERROR]http://www.malware-traffic-analysis.net/2016/09/16/index3.html
+	31.184.192.188 port 80 - iiofuro.top - EITest gate	185.117.73.195 port 80 - zxzdo.y4z6rp59a.top - Rig EK	74.208.205.36 port 80 - syrtibusquepivsakko.letloosevip.com -  Rig EK	65.49.8.96 port 443 - CrypMIC calback traffic, plain text and custom encoded, not HTTPS/SSL/TLS	74.208.205.36 port 80 - syrtibusquepivsakko.letloosevip.com -  Rig EK	65.49.8.96 port 443 - CrypMIC calback traffic, plain text and custom encoded, not HTTPS/SSL/TLS	31.184.192.188 port 80 - kumaconexion.top - EITest gate	185.117.73.195 port 80 - zxzdo.y4z6rp59a.top -  Rig EK	83.217.27.178 port 80 - jjadfhcyxu.ddnsking.com - GET /wordpress/?ARX8  -  gate/decirect	74.208.193.71 port 80 - groepleier.702guru.com -  Rig EK	65.49.8.96 port 443 - CrypMIC calback traffic, plain text and custom encoded, not HTTPS/SSL/TLS	178.62.23.109 port 80 - lin.portalsmk.com - GET /jquery.file.js  -  Afraidgate redirect	137.74.148.232 port 80 - mlylrqaa.nowmalawi.top - Neutrino EK	178.62.23.109 port 80 - knight.manex.us - GET /jquery.colorbox-min.js  -  Afraidgate redirect	178.62.23.109 port 80 - knight.manex.us - GET /scripts/advertising.js  -  Afraidgate redirect	137.74.148.232 port 80 - fnszgx.nowmalawi.top - Neutrino EK	185.75.46.29 port 80 - 185.75.46.29 - GET /tt.php  -  Locky downloader calling for Locky	51.255.105.2 port 80 - 51.255.105.2 - POST /data/info.php  -  Locky post-infection callback
+EK traffic IPs occuring on same /24
+********************************************************************************
+********************************************************************************
+31.184.234.0
+	http://www.malware-traffic-analysis.net/2016/08/10/index.html
+	http://www.malware-traffic-analysis.net/2016/08/05/index.html
+
+31.184.234.117
+	http://www.malware-traffic-analysis.net/2016/09/15/index.html
+
+74.208.154.9
+	http://www.malware-traffic-analysis.net/2016/08/24/index2.html
+
+74.208.154.148
+	http://www.malware-traffic-analysis.net/2016/09/16/index.html
+
+74.208.193.71
+	http://www.malware-traffic-analysis.net/2016/09/16/index3.html
+
+74.208.193.214
+	http://www.malware-traffic-analysis.net/2016/09/12/index3.html
+
+185.117.73.16
+	http://www.broadanalysis.com/2016/09/12/rig-ek-via-eitest-from-31-184-193-168-delivers-vawtrak/
+
+185.117.73.140
+	http://www.malware-traffic-analysis.net/2016/09/08/index2.html
+
+185.117.73.160
+	http://www.malware-traffic-analysis.net/2016/09/12/index2.html
+
+185.117.73.165
+	http://www.malware-traffic-analysis.net/2016/09/14/index.html
+
+185.117.73.174
+	http://www.broadanalysis.com/2016/09/15/rig-exploit-kit-via-eitest-gate-31-184-192-188-delivers-gootkit-banking-malware/
+	http://www.malware-traffic-analysis.net/2016/09/15/index.html
+
+185.117.73.175
+	http://www.malware-traffic-analysis.net/2016/09/15/index.html
+
+185.117.73.192
+	http://www.malware-traffic-analysis.net/2016/09/16/index2.html
+
+185.117.73.195
+	http://www.malware-traffic-analysis.net/2016/09/16/index3.html
+

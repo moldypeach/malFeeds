@@ -67,3 +67,10 @@ class Database:
 	def printTableEntries(self, tableIn):
 		for i in self.db.table(tableIn).all():
 			print(i)
+
+	#Print table entries
+	def getTableEntries(self, tableIn):
+		tmpList = []
+		for i in self.db.table(tableIn).all():
+			tmpList.append(i)
+		return tmpList

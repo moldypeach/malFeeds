@@ -86,6 +86,22 @@ class ParseFeeds:
 #Return Key for dictonary of blog feeds from feedparser link
 	def genDictKey(self, inStr):
 		return inStr.split('.').pop(1)
+
+	def urlBreak(self,matchObj):
+		if re.match(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}", matchObj.group(0)):
+			return matchObj.group(0)
+		else:
+			i = matchObj.group(0).rfind('.')
+			return matchObj.group(0)[:i] + matchObj.group(0)[i:].replace('.', '[.]')
+
+	def repChr(self,matchObj):
+		if re.match("‑|‒|–|—|―|\u2011|\u2012|\u2013|\u2014|\u2015", matchObj.group(0)):
+			#Replace any of the unicode hyphes with ASCII hyphen
+			return matchObj.group(0).replace(matchObj.group(0), '-')
+		else:
+			#Replace nbsp with a space ' '
+			return matchObj.group(0).replace(matchObj.group(0), ' ')
+
 #Utilize feedparser to populate dictionary of entries from each URL in feeds/sources
 # ***Eventually a test should be conducted for Internet connectivity prior to running!***
 	def parseFeeds(self):
@@ -142,7 +158,9 @@ class ParseFeeds:
 	def parseIPs(self, urlIn, urlHash):
 		http = urllib3.PoolManager()
 		rx_ip = re.compile("(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(.*)")
-		rx_date = re.compile("(\/\d{4}\/\d{2}\/\d{2}\/)") 
+		rx_date = re.compile("(\/\d{4}\/\d{2}\/\d{2}\/)")
+		infoRx = re.compile("([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+)?")
+		encRx = re.compile("‑|‒|–|—|―|\u2011|\u2012|\u2013|\u2014|\u2015|\u00A0| ")
 		req = http.request('GET', urlIn)
 
 		match = rx_date.search(urlIn)
@@ -157,9 +175,12 @@ class ParseFeeds:
 				match = rx_ip.match(text)
 				if match:
 					ip = match.group(1).strip()
-					info = match.group(2).strip()
+					
+					tmp = re.sub(infoRx, self.urlBreak, match.group(2).strip())
+					info = re.sub(encRx, self.repChr, tmp)
+					del(tmp)
 					#TODO: sanatize malicious URLs on insert, e.g. replace *.com with *[.]com
-					self.db.insert_tbl("tbl_MALIPS", {"ip": ip, "date": date,"info": info.replace('\u2012', '-'), "urlHash": urlHash})
+					self.db.insert_tbl("tbl_MALIPS", {"ip": ip, "date": date,"info": info, "urlHash": urlHash})
 					#If IP is already known, associate new reference URLs to it as necessary
 					ipRef = self.db.getItem_tbl('tbl_IPREF', 'ip', ip)
 					if not ipRef:
@@ -190,8 +211,8 @@ class ParseFeeds:
 		msgIPs = ""
 		msgEntries = ""
 		msgSubIPs = ""
+		blogEntries = dict()
 		ipSet = set()
-		refURLs = set()
 		subIPSet = set()
 		subIPRefsSet = set()
 		for date in ipDates:
@@ -201,10 +222,14 @@ class ParseFeeds:
 				for element in result:
 					ip = element["ip"]
 					info = element["info"]
+					urlHash = element['urlHash']
 					ipSet.add(ip)
 					#Associates IPs with blog info for analyst consumption (some ips repeat because different info was analyzed)
-					msgEntries += ip + " " + info + "\r\n"
-					refURLs.add(element["urlHash"])
+					entry = ip + " " + info
+					if urlHash not in blogEntries:
+						blogEntries[urlHash] = [entry]
+					else:
+						blogEntries[urlHash].append(entry)
 		#msgIPs are duplicated for ease of pasting into summary db search
 		for ip in ipSet:
 			msgIPs += ip + "\r\n"
@@ -224,9 +249,10 @@ class ParseFeeds:
 			msgSubIPs = "No IPs detected in the same /24 within current date range"
 
 		#Append unique list referennce URLs for asssoicated IPs above
-		for urlHash in refURLs:
+		for urlHash, entries in blogEntries.items():
 			msgEntries += self.db.getUrlFromHash("tbl_ENTRIES", "urlHash", urlHash) + "\r\n"
-
+			for entry in entries:
+				msgEntries += "\t" + entry + "\r\n"
 		outMsg = (
 			"EK traffic IPs over the last three days" + "\r\n" + 
 			br + "\r\n" +  
