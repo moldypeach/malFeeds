@@ -18,7 +18,7 @@ from modules.parseFeedsDB import ParseFeedsDB
 
 
 class ParseFeeds:
-	""" Parse feeds URLs from source folder"""
+	""" Parse feeds URLs from source folder, download the resources, process and print the results"""
 
 	feedBaseDir = "./feeds/"
 	feedSrcDir = feedBaseDir + "sources/"
@@ -53,47 +53,47 @@ class ParseFeeds:
 				print(msg)
 				sys.exit()
 
-#Validates http(s):// URL is valid
+	#Validates http(s):// URL is valid
 	def validateFeedURL(self, url):
 		if validators.url(url):
 			return True
 		else:
 			print("ERROR: invalid URL sntax:\n\t" + url)
 
-#Returns the second item of split, after protocol, as directory name
+	#Returns the second item of split, after protocol, as directory name
 	def _buildOutDir(self, feedURL):
 		tmp = feedURL.split('.').pop(1).strip(' \n\r\t')
 		return tmp.strip(' \n\r\t')
-#Returns the complete URL of file to store downloaded feed
+	#Returns the complete URL of file to store downloaded feed
 	def _buildOutURL(self):
 		tmp = self.feedDstRootDir + self.outDir + "/" + self.outfile
 		return tmp.strip(' \n\r\t')
-#Return MD5 hash string object of an entire file in binary mode
+	#Return MD5 hash string object of an entire file in binary mode
 	def encFileMD5(self,inFile):
  		return hashlib.md5(open(inFile, mode='rb').read()).hexdigest().decode('utf-8')
-#Return MD5 hash string object - must first convert to bytes
+	#Return MD5 hash string object - must first convert to bytes
 	def encStrMD5(self,inStr):
 		return hashlib.md5(inStr.encode("utf-8")).hexdigest()
-#Return MD5 hash string object
+	#Return MD5 hash string object
 	def encBytesMD5(self, bObj):
 		return hashlib.md5(bObj).hexdigest().decode('utf-8')
-#Return Base64 encoded string object - must first convert to bytes
+	#Return Base64 encoded string object - must first convert to bytes
 	def encStrB64(self, inStr):
 		return base64.b64encode(inStr.encode('utf-8')).decode('utf-8')
-#Return decoded Base64 string object from bytes
+	#Return decoded Base64 string object from bytes
 	def decStrB64(self, bObj):
 		return base64.b64decode(bObj).decode('utf-8')
-#Return Key for dictonary of blog feeds from feedparser link
+	#Return Key for dictonary of blog feeds from feedparser link
 	def genDictKey(self, inStr):
 		return inStr.split('.').pop(1)
-
+	#Breaks URL hyperlinks for surrounding last '.' with braces, e.g. co[.]uk
 	def urlBreak(self,matchObj):
 		if re.match(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}", matchObj.group(0)):
 			return matchObj.group(0)
 		else:
 			i = matchObj.group(0).rfind('.')
 			return matchObj.group(0)[:i] + matchObj.group(0)[i:].replace('.', '[.]')
-
+	#Replaces matched characters
 	def repChr(self,matchObj):
 		if re.match("‑|‒|–|—|―|\u2011|\u2012|\u2013|\u2014|\u2015", matchObj.group(0)):
 			#Replace any of the unicode hyphes with ASCII hyphen
@@ -156,7 +156,8 @@ class ParseFeeds:
 
 #Parse feed URLs for malicious IPs and extraneous info
 	def parseIPs(self, urlIn, urlHash):
-		http = urllib3.PoolManager()
+		user_agent = {'user-agent': 'https://github.com/moldypeach/malFeeds'}
+		http = urllib3.PoolManager(headers=user_agent)
 		rx_ip = re.compile("(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(.*)")
 		rx_date = re.compile("(\/\d{4}\/\d{2}\/\d{2}\/)")
 		infoRx = re.compile("([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+)?")
@@ -179,7 +180,6 @@ class ParseFeeds:
 					tmp = re.sub(infoRx, self.urlBreak, match.group(2).strip())
 					info = re.sub(encRx, self.repChr, tmp)
 					del(tmp)
-					#TODO: sanatize malicious URLs on insert, e.g. replace *.com with *[.]com
 					self.db.insert_tbl("tbl_MALIPS", {"ip": ip, "date": date,"info": info, "urlHash": urlHash})
 					#If IP is already known, associate new reference URLs to it as necessary
 					ipRef = self.db.getItem_tbl('tbl_IPREF', 'ip', ip)
@@ -215,6 +215,7 @@ class ParseFeeds:
 		ipSet = set()
 		subIPSet = set()
 		subIPRefsSet = set()
+		#TODO: Explore more efficient means of accomplishing this block
 		for date in ipDates:
 			result = self.db.search_tbl('tbl_MALIPS', 'date', date)
 			#Ignore any empty result list
@@ -230,7 +231,7 @@ class ParseFeeds:
 						blogEntries[urlHash] = [entry]
 					else:
 						blogEntries[urlHash].append(entry)
-		#msgIPs are duplicated for ease of pasting into summary db search
+		#msgIPs are deduplicated for ease of pasting into summary db search
 		for ip in ipSet:
 			msgIPs += ip + "\r\n"
 		#See if db contains any other ips in same /24
