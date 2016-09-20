@@ -22,6 +22,7 @@ class ParseFeeds:
 
 	feedBaseDir = "./feeds/"
 	feedSrcDir = feedBaseDir + "sources/"
+	#feedparser.USER_AGENT = "https://github.com/moldypeach/malFeeds"
 
 	def __init__(self):
 		#List of blog URLs
