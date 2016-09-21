@@ -115,7 +115,7 @@ class ParseFeeds:
 			if self.db.chkExists_tbl("tbl_UPDATED", "feed", feedTitle):
 				tmp = self.db.getFeedLastMod("tbl_UPDATED", "feed", feedTitle)
 				if tmp['etag'] != '':
-					eTag = tmp['etag'].replace("-gzip","") #replace resolves etag bug
+					eTag = tmp['etag']
 					fp = feedparser.parse(feed, etag=eTag)
 				else:
 					feedMod = tmp['modified']
@@ -135,10 +135,11 @@ class ParseFeeds:
 					print(msg)
 					continue
 				else:
+					#etag.replace() resolves etag bug
 					if not self.db.chkExists_tbl("tbl_UPDATED", "feed", feedTitle):
-						self.db.insert_tbl("tbl_UPDATED", {"feed":feedTitle, "etag":fp.etag, "modified":fp.modified})					
+						self.db.insert_tbl("tbl_UPDATED", {"feed":feedTitle, "etag":fp.etag.replace("-gzip",""), "modified":fp.modified})					
 					else:
-						self.db.update_tbl("tbl_UPDATED", "feed", {"etag":fp.etag}, feedTitle)
+						self.db.update_tbl("tbl_UPDATED", "feed", {"etag":fp.etag.replace("-gzip","")}, feedTitle)
 						self.db.update_tbl("tbl_UPDATED", "feed", {"modified":fp.modified}, feedTitle)
 			
 					for item in fp.entries:
@@ -196,28 +197,27 @@ class ParseFeeds:
 							self.db.update_tbl("tbl_IPREF", "ip", {"refs":ipRef["refs"]}, ip)
 			#Apparently, on rare occasion a blog will be created with traffic in <p>'s instead of <li>'s.
 			# e.g. http://www.broadanalysis.com/2016/09/19/rig-exploit-kit-via-pseudodarkleech-delivers-crypmic-ransomware/
-			# I hadn't observed this previously, i.e. tested/coded for it. Alas, noLI should flip if at least one regex 
-			# match on a <li> isn't found, and try to match on <p>'s instead. As presently implemented this won't catch all!
 			if not noLI:
 				listItems = soup.find_all("p")
 				for i in listItems:
 					text = i.get_text()
-					match = rx_ip.match(text)
-					if match:
-						ip = match.group(1).strip()
-						
-						tmp = re.sub(infoRx, self.urlBreak, match.group(2).strip())
-						info = re.sub(encRx, self.repChr, tmp)
-						del(tmp)
-						self.db.insert_tbl("tbl_MALIPS", {"ip": ip, "date": date,"info": info, "urlHash": urlHash})
-						#If IP is already known, associate new reference URLs to it as necessary
-						ipRef = self.db.getItem_tbl('tbl_IPREF', 'ip', ip)
-						if not ipRef:
-							refList = [urlIn]
-							self.db.insert_tbl('tbl_IPREF', {"ip":ip, "refs":refList})
-						else:
-							if urlIn not in ipRef["refs"]:
-								ipRef["refs"].append(urlIn)
+					for line in re.split('\r\n|\r|\n', text):
+						match = rx_ip.match(line)
+						if match:
+							ip = match.group(1).strip()
+							
+							tmp = re.sub(infoRx, self.urlBreak, match.group(2).strip())
+							info = re.sub(encRx, self.repChr, tmp)
+							del(tmp)
+							self.db.insert_tbl("tbl_MALIPS", {"ip": ip, "date": date,"info": info, "urlHash": urlHash})
+							#If IP is already known, associate new reference URLs to it as necessary
+							ipRef = self.db.getItem_tbl('tbl_IPREF', 'ip', ip)
+							if not ipRef:
+								refList = [urlIn]
+								self.db.insert_tbl('tbl_IPREF', {"ip":ip, "refs":refList})
+							else:
+								if urlIn not in ipRef["refs"]:
+									ipRef["refs"].append(urlIn)
 								self.db.update_tbl("tbl_IPREF", "ip", {"refs":ipRef["refs"]}, ip)
 		else:
 			#TODO: etter exception handling should be implemented

@@ -2,6 +2,8 @@
 #External pkg dependencies
 from tinydb import TinyDB, Query #tinydb.readthedocs.io/en/latest/
 
+import os, sys
+
 class Database:
 	""" Perform database work """
 
@@ -15,12 +17,12 @@ class Database:
 		dbURL = dbDir + dbFile
 		#Test to ENSURE db gets created and exit if not? 10Sep16
 		try:
-			os.makedirs(dbDir, exist_ok=False)
+			os.makedirs(dbDir, exist_ok=True)
 		except OSError:
 			msg = dbDir + " already exists."
 			print(msg)
 		else:
-			if not os.path.exists(dbURL, name="default"):
+			if not os.path.exists(dbURL):
 				msg = dbURL + " does not exist. Attempting to create."
 		finally:
 			return TinyDB(dbURL)
