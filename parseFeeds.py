@@ -163,7 +163,8 @@ class ParseFeeds:
 		rx_date = re.compile("(\/\d{4}\/\d{2}\/\d{2}\/)")
 		infoRx = re.compile("([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+)?")
 		encRx = re.compile("‑|‒|–|—|―|\u2011|\u2012|\u2013|\u2014|\u2015|\u00A0| ")
-		req = http.request('GET', urlIn)
+		retries = urllib3.Retry(total=5, connect=0, read=3, redirect=2)
+		req = http.request('GET', urlIn, retries=retries)
 
 		match = rx_date.search(urlIn)
 		date = match.group(0).strip('/') 
@@ -171,11 +172,13 @@ class ParseFeeds:
 		if req.status == 200:
 			soup = BeautifulSoup(req.data, 'html.parser')
 			listItems = soup.find_all("li")
+			noLI = False
 
 			for i in listItems:
 				text = i.get_text()
 				match = rx_ip.match(text)
 				if match:
+					noLI = True
 					ip = match.group(1).strip()
 					
 					tmp = re.sub(infoRx, self.urlBreak, match.group(2).strip())
@@ -191,6 +194,35 @@ class ParseFeeds:
 						if urlIn not in ipRef["refs"]:
 							ipRef["refs"].append(urlIn)
 							self.db.update_tbl("tbl_IPREF", "ip", {"refs":ipRef["refs"]}, ip)
+			#Apparently, on rare occasion a blog will be created with traffic in <p>'s instead of <li>'s.
+			# e.g. http://www.broadanalysis.com/2016/09/19/rig-exploit-kit-via-pseudodarkleech-delivers-crypmic-ransomware/
+			# I hadn't observed this previously, i.e. tested/coded for it. Alas, noLI should flip if at least one regex 
+			# match on a <li> isn't found, and try to match on <p>'s instead. As presently implemented this won't catch all!
+			if not noLI:
+				listItems = soup.find_all("p")
+				for i in listItems:
+					text = i.get_text()
+					match = rx_ip.match(text)
+					if match:
+						ip = match.group(1).strip()
+						
+						tmp = re.sub(infoRx, self.urlBreak, match.group(2).strip())
+						info = re.sub(encRx, self.repChr, tmp)
+						del(tmp)
+						self.db.insert_tbl("tbl_MALIPS", {"ip": ip, "date": date,"info": info, "urlHash": urlHash})
+						#If IP is already known, associate new reference URLs to it as necessary
+						ipRef = self.db.getItem_tbl('tbl_IPREF', 'ip', ip)
+						if not ipRef:
+							refList = [urlIn]
+							self.db.insert_tbl('tbl_IPREF', {"ip":ip, "refs":refList})
+						else:
+							if urlIn not in ipRef["refs"]:
+								ipRef["refs"].append(urlIn)
+								self.db.update_tbl("tbl_IPREF", "ip", {"refs":ipRef["refs"]}, ip)
+		else:
+			#TODO: etter exception handling should be implemented
+			msg = "ERROR: The following URL could not be retrieved: \r\n\t" + urlIn + "\r\n" 
+			print(msg)
 
 
 #Format new entry messagee

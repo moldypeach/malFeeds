@@ -1,0 +1,67 @@
+EK traffic IPs over the last three days
+********************************************************************************
+********************************************************************************
+31.184.193.187
+65.49.8.96
+176.31.127.110
+74.208.192.75
+109.234.36.38
+
+EK traffic IPs (with info) from blog entries
+********************************************************************************
+********************************************************************************
+http://www.broadanalysis.com/2016/09/19/rig-exploit-kit-via-eitest-gate-31-184-193-187-delivers-crypt2-ransomware/
+	31.184.193.187 - www.autogrs[.]party - EITEST GATE
+	109.234.36.38 - add.arielcatering[.]com - RIG EK LANDING PAGE
+	176.31.127.110 - Crypt2 COMMAND and CONTROL
+http://www.broadanalysis.com/2016/09/20/rig-exploit-kit-via-pseudodarkleech-from-74-208-192-75-delivers-crypmic-ransomware/
+	74.208.192.75 - puroretastillstanden.transpc[.]com - Rig EK LANDING PAGE
+	65.49.8.96 - Port 443 - Clear Text - CnC Check-In POST INFECTION TRAFFIC
+	74.208.192.75 - puroretastillstanden.transpc[.]com - Rig EK LANDING PAGE
+	65.49.8.96 - Port 443 - Clear Text - CnC Check-In POST INFECTION TRAFFIC
+http://www.malware-traffic-analysis.net/2016/09/19/index.html
+	31.184.193.187 port 80 - www[.]ads-stat[.]download - EITest gate
+	109.234.36.38 port 80 - add.arielcatering[.]com - Rig EK
+	176.31.127.110 port 80 - 176.31.127.110 - GET /headers[.]jpg   [post-infection traffic]
+	176.31.127.110 port 80 - 176.31.127.110 - POST /zig/offers[.]php   [post-infection traffic]
+http://www.malware-traffic-analysis.net/2016/09/20/index2.html
+	74.208.192.75 port 80 - grenzpol.transpc[.]com - Rig EK
+	65.49.8.96 port 443 - post-infection CrypMIC callback, custom encoded and clear text, not HTTPS/SSL/TLS (both infections)
+	74.208.192.75 port 80 - grenzpol.transpc[.]com - Rig EK
+	65.49.8.96 port 443 - post-infection CrypMIC callback, custom encoded and clear text, not HTTPS/SSL/TLS (both infections)
+
+EK traffic IPs occuring on same /24
+********************************************************************************
+********************************************************************************
+31.184.193.168
+	http://www.broadanalysis.com/2016/09/13/rig-ek-via-eitest-from-31-184-193-168-delivers-vawtrak-2/
+	http://www.broadanalysis.com/2016/09/12/rig-ek-via-eitest-from-31-184-193-168-delivers-vawtrak/
+	http://www.malware-traffic-analysis.net/2016/09/14/index.html
+	http://www.malware-traffic-analysis.net/2016/09/13/index.html
+	http://www.malware-traffic-analysis.net/2016/09/12/index2.html
+	http://www.malware-traffic-analysis.net/2016/09/08/index2.html
+
+31.184.193.187
+	http://www.broadanalysis.com/2016/09/19/rig-exploit-kit-via-eitest-gate-31-184-193-187-delivers-crypt2-ransomware/
+	http://www.malware-traffic-analysis.net/2016/09/19/index.html
+
+74.208.192.75
+	http://www.broadanalysis.com/2016/09/20/rig-exploit-kit-via-pseudodarkleech-from-74-208-192-75-delivers-crypmic-ransomware/
+	http://www.malware-traffic-analysis.net/2016/09/20/index2.html
+
+74.208.192.79
+	http://www.malware-traffic-analysis.net/2016/09/16/index.html
+
+109.234.36.38
+	http://www.broadanalysis.com/2016/09/19/rig-exploit-kit-via-eitest-gate-31-184-193-187-delivers-crypt2-ransomware/
+	http://www.malware-traffic-analysis.net/2016/09/19/index.html
+
+109.234.36.132
+	http://www.malware-traffic-analysis.net/2016/08/30/index3.html
+
+109.234.36.198
+	http://www.malware-traffic-analysis.net/2016/08/26/index.html
+
+109.234.36.220
+	http://www.malware-traffic-analysis.net/2016/08/26/index3.html
+
