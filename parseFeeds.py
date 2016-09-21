@@ -9,13 +9,11 @@ import hashlib # For uniqueness comparisons
 import os, sys # For file system operations
 import base64
 import socket
-import smtplib
-from email.mime.text import MIMEText
 import re  #parseIPs()
 import datetime
 from modules.malFeedDB import Database  #parseIPs
 from modules.parseFeedsDB import ParseFeedsDB
-
+from modules.email import sendEmail
 
 class ParseFeeds:
 	""" Parse feeds URLs from source folder, download the resources, process and print the results"""
@@ -275,7 +273,7 @@ class ParseFeeds:
 				ip = element[0]
 				url = ""
 				for currURL in element[1]:
-					url += "\t" + currURL + "\r\n"
+					url += "\t" + currURL.replace('http', 'hXXp') + "\r\n"
 				msgSubIPs += (
 					ip + "\r\n" + 
 					url + "\r\n")
@@ -284,7 +282,7 @@ class ParseFeeds:
 
 		#Append unique list referennce URLs for asssoicated IPs above
 		for urlHash, entries in blogEntries.items():
-			msgEntries += self.db.getUrlFromHash("tbl_ENTRIES", "urlHash", urlHash) + "\r\n"
+			msgEntries += self.db.getUrlFromHash("tbl_ENTRIES", "urlHash", urlHash).replace('http', 'hXXp') + "\r\n"
 			for entry in entries:
 				msgEntries += "\t" + entry + "\r\n"
 		outMsg = (
@@ -309,4 +307,4 @@ class ParseFeeds:
 			f.close()
 		print(outMsg)
 			
-		#self.sendEmail(outMsg)
+		sendEmail(outMsg)
