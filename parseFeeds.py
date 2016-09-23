@@ -3,6 +3,7 @@
 import feedparser
 import validators #https://pypi.python.org/pypi/validators
 import urllib3  #parseIPs
+import certifi
 from bs4 import BeautifulSoup  #parseIPs from <li>'s'
 
 import hashlib # For uniqueness comparisons
@@ -13,7 +14,7 @@ import re  #parseIPs()
 import datetime
 from modules.malFeedDB import Database  #parseIPs
 from modules.parseFeedsDB import ParseFeedsDB
-from modules.email import sendEmail
+#from modules.email import sendEmail
 
 class ParseFeeds:
 	""" Parse feeds URLs from source folder, download the resources, process and print the results"""
@@ -133,12 +134,21 @@ class ParseFeeds:
 					print(msg)
 					continue
 				else:
-					#etag.replace() resolves etag bug
+					#etag.replace() prevents etag bug
 					if not self.db.chkExists_tbl("tbl_UPDATED", "feed", feedTitle):
-						self.db.insert_tbl("tbl_UPDATED", {"feed":feedTitle, "etag":fp.etag.replace("-gzip",""), "modified":fp.modified})					
+						if not "etag" in fp:
+							etag = ""
+							self.db.insert_tbl("tbl_UPDATED", {"feed":feedTitle, "etag":etag, "modified":fp.modified})
+						else:
+							self.db.insert_tbl("tbl_UPDATED", {"feed":feedTitle, "etag":fp.etag.replace("-gzip",""), "modified":fp.modified})
 					else:
-						self.db.update_tbl("tbl_UPDATED", "feed", {"etag":fp.etag.replace("-gzip","")}, feedTitle)
-						self.db.update_tbl("tbl_UPDATED", "feed", {"modified":fp.modified}, feedTitle)
+						if not "etag" in fp:
+							etag = ""
+							self.db.update_tbl("tbl_UPDATED", "feed", {"etag":etag}, feedTitle)
+							self.db.update_tbl("tbl_UPDATED", "feed", {"modified":fp.modified}, feedTitle)							
+						else:
+							self.db.update_tbl("tbl_UPDATED", "feed", {"etag":fp.etag.replace("-gzip","")}, feedTitle)
+							self.db.update_tbl("tbl_UPDATED", "feed", {"modified":fp.modified}, feedTitle)
 			
 					for item in fp.entries:
 						urlHash = self.encStrMD5(item.link)
@@ -157,7 +167,10 @@ class ParseFeeds:
 #Parse feed URLs for malicious IPs and extraneous info
 	def parseIPs(self, urlIn, urlHash):
 		user_agent = {'user-agent': 'https://github.com/moldypeach/malFeeds'}
-		http = urllib3.PoolManager(headers=user_agent)
+		http = urllib3.PoolManager(
+			headers=user_agent, 
+			cert_reqs='CERT_REQUIRED', 
+			ca_certs=certifi.where())
 		rx_ip = re.compile("(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(.*)")
 		rx_date = re.compile("(\/\d{4}\/\d{2}\/\d{2}\/)")
 		infoRx = re.compile("([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+)?")
@@ -282,7 +295,7 @@ class ParseFeeds:
 
 		#Append unique list referennce URLs for asssoicated IPs above
 		for urlHash, entries in blogEntries.items():
-			msgEntries += self.db.getUrlFromHash("tbl_ENTRIES", "urlHash", urlHash).replace('http', 'hXXp') + "\r\n"
+			msgEntries += ("\r\n" + self.db.getUrlFromHash("tbl_ENTRIES", "urlHash", urlHash).replace('http', 'hXXp') + "\r\n")
 			for entry in entries:
 				msgEntries += "\t" + entry + "\r\n"
 		outMsg = (
@@ -307,4 +320,4 @@ class ParseFeeds:
 			f.close()
 		print(outMsg)
 			
-		sendEmail(outMsg)
+		#sendEmail(outMsg)
